@@ -1,7 +1,7 @@
 import Navbar from '@/components/Navbar';
 import ProjectGrid from '@/components/ProjectGrid';
 import SectionHeading from '@/components/SectionHeading';
-import { assistingProjects, featuredStats, photographyProjects, profile, socialProjects, workProjects } from '@/data/projects';
+import { assistingProjects, featuredStats, filmPhotographyProjects, photographyProjects, profile, socialProjects, workProjects } from '@/data/projects';
 import { Instagram, Mail, MessageCircle } from 'lucide-react';
 
 export default function Home() {
@@ -57,6 +57,24 @@ export default function Home() {
         <ProjectGrid projects={socialProjects} tall />
       </section>
 
+
+      <section id="film" className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <SectionHeading eyebrow="Analogue photography" title="Film Camera">
+            A quieter analogue layer for Theo's film-camera work: texture, process, street frames, portraits and behind-the-scenes studies.
+          </SectionHeading>
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-7 text-white/65">
+            <p className="text-sm leading-7">
+              This section can later become a proper film gallery. For now it gives the site another visual lane that links directly to the film-camera Instagram.
+            </p>
+            <a className="mt-6 inline-flex w-fit items-center gap-3 rounded-full border border-white/15 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.24em] text-white/80 transition hover:bg-white hover:text-black" href={profile.filmInstagram} target="_blank">
+              <Instagram className="h-4 w-4" /> View Film Page
+            </a>
+          </div>
+        </div>
+        <ProjectGrid projects={filmPhotographyProjects} />
+      </section>
+
       <section id="photography" className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
         <SectionHeading eyebrow="Portrait photography" title="Photography">
           A gallery section waiting for the portrait folder when it is ready.
@@ -79,6 +97,9 @@ export default function Home() {
             </a>
             <a className="inline-flex items-center justify-center gap-3 rounded-full border border-white/15 px-6 py-4 text-sm text-white/80 transition hover:bg-white hover:text-black" href={profile.instagram} target="_blank">
               <Instagram className="h-4 w-4" /> Instagram
+            </a>
+            <a className="inline-flex items-center justify-center gap-3 rounded-full border border-white/15 px-6 py-4 text-sm text-white/80 transition hover:bg-white hover:text-black" href={profile.filmInstagram} target="_blank">
+              <Instagram className="h-4 w-4" /> Film Camera
             </a>
           </div>
         </div>

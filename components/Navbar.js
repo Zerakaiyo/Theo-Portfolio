@@ -4,6 +4,7 @@ const navItems = [
   ['Work', '#work'],
   ['Assisting', '#assisting'],
   ['Social', '#social'],
+  ['Film', '#film'],
   ['Photography', '#photography'],
   ['Contact', '#contact'],
 ];

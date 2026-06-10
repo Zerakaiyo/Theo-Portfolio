@@ -5,6 +5,7 @@ export const profile = {
   email: 'hello@example.com',
   whatsapp: 'https://wa.me/440000000000',
   instagram: 'https://www.instagram.com/theo.majer/',
+  filmInstagram: 'https://www.instagram.com/theomajer.filmcamera/',
 };
 
 export const featuredStats = [
@@ -33,6 +34,12 @@ export const socialProjects = [
   { title: 'Vertical Content 02', role: 'Camera / Lighting', format: '9:16 Social', year: '2026' },
   { title: 'Vertical Content 03', role: 'Creative Capture', format: '9:16 Social', year: '2025' },
   { title: 'Vertical Content 04', role: 'Shoot / Edit', format: '9:16 Social', year: '2025' },
+];
+
+export const filmPhotographyProjects = [
+  { title: '35mm Frames 01', role: 'Film Photography', format: '35mm / 120', year: 'Ongoing' },
+  { title: 'Street Studies', role: 'Film Photography', format: 'Analogue', year: 'Ongoing' },
+  { title: 'Behind The Light', role: 'Film Photography', format: 'Process / BTS', year: 'Ongoing' },
 ];
 
 export const photographyProjects = [
