@@ -1,23 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./data/**/*.{js,ts,jsx,tsx,mdx}"
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './data/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "Inter", "Arial", "sans-serif"],
-        display: ["var(--font-display)", "Georgia", "serif"]
+        sans: ['var(--font-sans)', 'Inter', 'Arial', 'sans-serif'],
+        serif: ['var(--font-serif)', 'Georgia', 'serif'],
       },
-      colors: {
-        ink: "#050505",
-        charcoal: "#101010",
-        fog: "#b7b7b7",
-        bone: "#f6f1e8"
-      }
-    }
+      letterSpacing: {
+        'cinema': '0.32em',
+      },
+      backgroundImage: {
+        'grain': "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.11) 1px, transparent 0)",
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };

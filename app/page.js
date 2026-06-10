@@ -1,93 +1,84 @@
-import Navbar from "../components/Navbar";
-import ProjectGrid from "../components/ProjectGrid";
-import SectionHeading from "../components/SectionHeading";
-import { assistingWork, contactLinks, selectedWork, socialContent } from "../data/projects";
+import Navbar from '@/components/Navbar';
+import ProjectGrid from '@/components/ProjectGrid';
+import SectionHeading from '@/components/SectionHeading';
+import { assistingProjects, featuredStats, photographyProjects, profile, socialProjects, workProjects } from '@/data/projects';
+import { Instagram, Mail, MessageCircle } from 'lucide-react';
 
 export default function Home() {
   return (
-    <main id="top" className="min-h-screen bg-ink text-bone">
+    <main id="top" className="noise min-h-screen overflow-hidden bg-[#030303] text-white">
       <Navbar />
 
-      <section className="relative flex min-h-screen items-end overflow-hidden px-5 pb-16 pt-28 md:px-8 md:pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(255,255,255,0.14),transparent_30%),linear-gradient(to_bottom,rgba(255,255,255,0.04),transparent_35%)]" />
-        <div className="relative mx-auto w-full max-w-7xl">
-          <p className="mb-5 text-xs uppercase tracking-[0.42em] text-fog">DoP / Photography / Lighting</p>
-          <h1 className="max-w-5xl font-display text-6xl font-medium leading-[0.9] text-bone md:text-8xl lg:text-9xl">
-            Theo Majer
-          </h1>
-          <div className="mt-8 flex max-w-3xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <p className="text-lg leading-8 text-fog md:text-xl">
-              A cinematic portfolio for moving image, lighting, assisting credits, social content and portrait photography.
-            </p>
-            <a
-              href="#work"
-              className="inline-flex w-fit rounded-full border border-white/20 px-6 py-3 text-xs uppercase tracking-[0.25em] text-bone transition hover:bg-bone hover:text-ink"
-            >
-              View Work
-            </a>
+      <section className="relative min-h-screen px-5 pt-28 sm:px-8">
+        <div className="absolute inset-0 bg-grain bg-[length:18px_18px] opacity-[0.11]" />
+        <div className="absolute left-1/2 top-0 h-[80vh] w-[38vw] -translate-x-1/2 bg-white/[0.055] blur-3xl" />
+        <div className="relative mx-auto flex min-h-[82vh] max-w-7xl flex-col justify-end pb-16 md:pb-24">
+          <div className="max-w-4xl">
+            <p className="mb-7 text-[11px] uppercase tracking-cinema text-white/70">{profile.strapline}</p>
+            <h1 className="font-serif text-7xl leading-[0.88] tracking-[-0.05em] text-[#f7f1e8] sm:text-8xl md:text-[10rem]">
+              Theo<br className="sm:hidden" /> Majer
+            </h1>
+            <div className="mt-8 flex flex-col gap-7 md:flex-row md:items-center">
+              <p className="max-w-2xl text-lg leading-8 text-white/65 md:text-xl">{profile.intro}</p>
+              <a href="#work" className="w-fit rounded-full border border-white/20 px-7 py-4 text-[11px] font-bold uppercase tracking-[0.28em] text-white transition hover:border-white/55 hover:bg-white hover:text-black">
+                View Work
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section id="work" className="mx-auto max-w-7xl px-5 py-24 md:px-8">
-        <SectionHeading
-          eyebrow="Selected Work"
-          title="Horizontal films and 4K project placeholders."
-          text="The structure is ready for project titles, roles, thumbnails and real video embeds once the Drive links are available."
-        />
-        <ProjectGrid projects={selectedWork} />
-      </section>
-
-      <section id="assisting" className="border-y border-white/10 bg-white/[0.03]">
-        <div className="mx-auto max-w-7xl px-5 py-24 md:px-8">
-          <SectionHeading
-            eyebrow="Assisting Work"
-            title="Camera, lighting and on-set support credits."
-            text="A dedicated section for projects where Theo contributed as an assistant, operator or lighting support."
-          />
-          <ProjectGrid projects={assistingWork} />
-        </div>
-      </section>
-
-      <section id="social" className="mx-auto max-w-7xl px-5 py-24 md:px-8">
-        <SectionHeading
-          eyebrow="Social Media Content"
-          title="Vertical work for socials, reels and short-form campaigns."
-          text="A separate rhythm for 9:16 content, designed to feel native to mobile-first work without cluttering the main portfolio."
-        />
-        <ProjectGrid projects={socialContent} variant="vertical" />
-      </section>
-
-      <section id="photography" className="border-y border-white/10 bg-white/[0.03]">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-24 md:grid-cols-[1fr_1.2fr] md:px-8">
-          <SectionHeading
-            eyebrow="Photography"
-            title="Portrait photography section coming soon."
-            text="This page can become a gallery once the portrait selection is ready. For now, it works as a quiet placeholder rather than an empty wall."
-          />
-          <div className="grid grid-cols-2 gap-4">
-            {["01", "02", "03", "04"].map((item) => (
-              <div key={item} className="aspect-[4/5] rounded-3xl border border-white/10 bg-white/[0.06] p-5">
-                <p className="text-xs uppercase tracking-[0.3em] text-fog">Portrait {item}</p>
+          <div className="mt-14 grid gap-3 border-t border-white/10 pt-6 sm:grid-cols-3">
+            {featuredStats.map((item) => (
+              <div key={item.label}>
+                <p className="font-serif text-3xl text-[#f6f0e7]">{item.value}</p>
+                <p className="mt-1 text-[10px] uppercase tracking-[0.24em] text-white/40">{item.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="mx-auto max-w-7xl px-5 py-24 md:px-8">
-        <div className="rounded-[2rem] border border-white/10 bg-bone p-8 text-ink md:p-12">
-          <p className="mb-4 text-xs uppercase tracking-[0.35em] text-charcoal/70">Contact</p>
-          <h2 className="font-display text-4xl font-medium md:text-6xl">For projects, shoots and assisting enquiries.</h2>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href={contactLinks.email} className="rounded-full bg-ink px-6 py-3 text-sm uppercase tracking-[0.2em] text-bone">
-              Email
+      <section id="work" className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
+        <SectionHeading eyebrow="Selected moving image" title="Work">
+          Horizontal 4K project placeholders ready for titles, roles and final video links.
+        </SectionHeading>
+        <ProjectGrid projects={workProjects} />
+      </section>
+
+      <section id="assisting" className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
+        <SectionHeading eyebrow="Camera / Lighting / Production" title="Assisting">
+          A dedicated space for assisting credits, separate from lead portfolio pieces.
+        </SectionHeading>
+        <ProjectGrid projects={assistingProjects} />
+      </section>
+
+      <section id="social" className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
+        <SectionHeading eyebrow="Vertical content" title="Social Media">
+          Built for Instagram Reels, TikTok edits and short-form campaign pieces.
+        </SectionHeading>
+        <ProjectGrid projects={socialProjects} tall />
+      </section>
+
+      <section id="photography" className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
+        <SectionHeading eyebrow="Portrait photography" title="Photography">
+          A gallery section waiting for the portrait folder when it is ready.
+        </SectionHeading>
+        <ProjectGrid projects={photographyProjects} />
+      </section>
+
+      <section id="contact" className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
+        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-8 md:p-14">
+          <p className="mb-5 text-[11px] uppercase tracking-cinema text-white/45">Contact</p>
+          <h2 className="max-w-4xl font-serif text-5xl leading-none text-[#f6f0e7] md:text-7xl">
+            Available for moving image, lighting, assisting and social content.
+          </h2>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a className="inline-flex items-center justify-center gap-3 rounded-full border border-white/15 px-6 py-4 text-sm text-white/80 transition hover:bg-white hover:text-black" href={`mailto:${profile.email}`}>
+              <Mail className="h-4 w-4" /> Email
             </a>
-            <a href={contactLinks.whatsapp} className="rounded-full border border-ink/20 px-6 py-3 text-sm uppercase tracking-[0.2em]">
-              WhatsApp
+            <a className="inline-flex items-center justify-center gap-3 rounded-full border border-white/15 px-6 py-4 text-sm text-white/80 transition hover:bg-white hover:text-black" href={profile.whatsapp} target="_blank">
+              <MessageCircle className="h-4 w-4" /> WhatsApp
             </a>
-            <a href={contactLinks.instagram} target="_blank" rel="noreferrer" className="rounded-full border border-ink/20 px-6 py-3 text-sm uppercase tracking-[0.2em]">
-              Instagram
+            <a className="inline-flex items-center justify-center gap-3 rounded-full border border-white/15 px-6 py-4 text-sm text-white/80 transition hover:bg-white hover:text-black" href={profile.instagram} target="_blank">
+              <Instagram className="h-4 w-4" /> Instagram
             </a>
           </div>
         </div>
