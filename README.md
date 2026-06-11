@@ -1,9 +1,5 @@
-# Theo Portfolio V2
+# Theo Portfolio V2 Cinematic
 
-Clean Next.js portfolio with separate pages and embedded Google Drive previews.
+Next.js portfolio with separate pages, embedded Google Drive previews, fullscreen on-site viewers, scroll-reveal animations, horizontal scroll reels, featured work, and cinematic hover overlays.
 
-## Edit content
-- `data/portfolio.js`
-
-## Contact links
-- Edit the contact section in `app/page.js`.
+Upload the extracted contents to GitHub, then deploy/import on Vercel. Keep `package.json` in the root.
