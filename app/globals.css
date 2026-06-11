@@ -4,7 +4,6 @@
 
 :root {
   --font-sans: Arial, Helvetica, sans-serif;
-  --font-serif: Georgia, 'Times New Roman', serif;
   --bg: #030303;
   --soft: #d8d3c8;
 }
@@ -15,6 +14,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: #f5f1e8;
+  font-family: var(--font-sans);
 }
 ::selection { background: #f5f1e8; color: #050505; }
 
