@@ -1,9 +1,11 @@
-import ProjectCard from './ProjectCard';
+import MediaCard from './MediaCard';
 
-export default function ProjectGrid({ projects, tall = false, driveUrl }) {
+export default function MediaGrid({ items = [], tall = false }) {
   return (
-    <div className={`mt-10 grid gap-5 ${tall ? 'sm:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-2 xl:grid-cols-3'}`}>
-      {projects.map((project) => <ProjectCard key={project.title} project={project} tall={tall} driveUrl={driveUrl} />)}
+    <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {items.map((item) => (
+        <MediaCard key={`${item.title}-${item.embedUrl || item.externalUrl || 'soon'}`} item={item} tall={tall} />
+      ))}
     </div>
   );
 }

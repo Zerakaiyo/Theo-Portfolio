@@ -1,14 +1,24 @@
-import './globals.css';
+# Theo Majer Portfolio
 
-export const metadata = {
-  title: 'Theo Majer | DoP / Photography / Lighting',
-  description: 'Cinematic portfolio for moving image, lighting, assisting credits, social media content and portrait photography.',
-};
+Cinematic Next.js portfolio website for Theo Majer.
 
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
-}
+## Edit content
+
+Most editable content is inside:
+
+```txt
+data/projects.js
+```
+
+Update titles, roles, years, contact details and future video URLs there.
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Deploy
+
+Import the GitHub repo into Vercel. No environment variables are required.
