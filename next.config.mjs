@@ -1,3 +1,126 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
-export default nextConfig;
+export const profile = {
+  name: 'THEO MAJER',
+  strapline: 'DOP / PHOTOGRAPHY / LIGHTING',
+  intro: 'A cinematic portfolio for moving image, lighting, assisting credits, social content and film-led photography.',
+  email: 'hello@example.com',
+  whatsapp: 'https://wa.me/440000000000',
+  instagram: 'https://www.instagram.com/theo.majer/',
+  filmInstagram: 'https://www.instagram.com/theomajer.filmcamera/',
+  oldWebsite: 'https://theo1majer.wixsite.com/theomajer',
+};
+
+const drive = (id) => `https://drive.google.com/file/d/${id}/preview`;
+
+export const portfolioCategories = [
+  {
+    id: 'fashion-films',
+    nav: 'Fashion Films',
+    title: 'FASHION FILMS',
+    eyebrow: 'SELECTED MOVING IMAGE',
+    description: 'Fashion-led moving image, short films and visual pieces. Click any card to watch directly on the site.',
+    items: [
+      { title: 'Arop Akol', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('1y2Bv7axo9tawyVuVa_C_mtFam_iqo9bT') },
+      { title: 'Can I Entertain {1}', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('10dJ_fpVVpuyzyCnxzyNRzViJP8DkHEla') },
+      { title: 'Can I Entertain {2}', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('1dcpWzq5GmWWxV3w0A15Zuyd92WWdyTAV') },
+      { title: 'Du Deurre - Final V', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('1kjriMkqyZkMhyhfmzru_JKfPa4V-8HwC') },
+      { title: 'Era 2 Era PT.1', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('13eMEOliACN6_0MU9nYPxMrsSxQDksi5B') },
+      { title: 'Era 2 Era PT.2', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('1DtFnfmEYNLO4xlCg79D9wEQ7CUi_cW1u') },
+      { title: 'Like This Unseen (Handycam)', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('1JGPNrixkSWTWPrTYOsb-HCgFGdQ79D2m') },
+      { title: 'Like This Unseen PT.1', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('1ECfAyY20NXrKIz2Oq5gelSgiALQPKy0t') },
+      { title: 'Like This Unseen PT.2', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('1jjB0jlItDkR3M9eY3qs21Pq_KiuWGGxq') },
+      { title: 'Outside The Circle - BTS', role: 'BTS', format: 'VIDEO', embedUrl: drive('1my0x6npbaz-c9rD_8H-w48qTJipjnEjv') },
+      { title: 'Outside The Circle - Timothy', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('1tvHcrJF5bSZRbSUczsZn9UQapsvY9V4J') },
+      { title: 'RGB {PT.1}', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('1fy1Wrkuo1rJ0FCSzFuLsRcviJoF1Qigv') },
+      { title: 'RGB {PT.2}', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('1iM8KXccFSr6k2mtr46rSXDMi0iyBBGED') },
+      { title: 'State of Still {PT.1}', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('1M6ROqSH52D9YatD2Rd8gfN7hrThQAq2L') },
+      { title: 'State of Still {PT.2}', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('1Awk4riyiPEB6e6H_doiM4wpGjDqTQoIO') },
+      { title: 'Taste of Time', role: 'FASHION FILM', format: 'VIDEO', embedUrl: drive('1rnHpJQ6fQi_PbcaxAVBQT29F9oqJIqqZ') },
+    ],
+  },
+  {
+    id: 'clothing',
+    nav: 'Clothing',
+    title: 'CLOTHING',
+    eyebrow: 'VITOR EDITED VIDEOS',
+    description: 'Clothing and garment-focused edits. Built as an embedded gallery so the work stays inside the portfolio.',
+    items: [
+      { title: 'Victor Clothing Videos {PT.1}', role: 'CLOTHING CONTENT', format: 'VIDEO', embedUrl: drive('1hBmUH4M3Wxoq5oIE5kBtt_YCTijgNapj') },
+      { title: 'Victor Clothing Videos {PT.2}', role: 'CLOTHING CONTENT', format: 'VIDEO', embedUrl: drive('175c7dUTkshww356ctPx7VjemxQmO-Z73') },
+      { title: 'Victor Clothing Videos {PT.3}', role: 'CLOTHING CONTENT', format: 'VIDEO', embedUrl: drive('1rBp_HEa7pBCOgokledz3flk7VbEPe_Cg') },
+      { title: 'Victor Clothing Videos {PT.4}', role: 'CLOTHING CONTENT', format: 'VIDEO', embedUrl: drive('1VVz2XW22GSZGnWj8eQBHbUQdcR_15EcC') },
+      { title: 'Victor Clothing Videos {PT.5}', role: 'CLOTHING CONTENT', format: 'VIDEO', embedUrl: drive('14hIz_czI2uGEjRixPERTkK4stzTfk0yk') },
+      { title: 'Victor Clothing Videos {PT.6}', role: 'CLOTHING CONTENT', format: 'VIDEO', embedUrl: drive('10tw1BttKQrXCJ4OfNT0XPNB7Z-HpzfD5') },
+      { title: 'Victor Clothing Videos {PT.7}', role: 'CLOTHING CONTENT', format: 'VIDEO', embedUrl: drive('1LMplkIl5PSiJtEZilmmmhNbDBQttQnyp') },
+      { title: 'Victor Clothing Videos {PT.8}', role: 'CLOTHING CONTENT', format: 'VIDEO', embedUrl: drive('1lqkMked6qxa7ykFqdu0N6l_8eyertj8n') },
+      { title: 'Victor Clothing Videos {PT.9}', role: 'CLOTHING CONTENT', format: 'VIDEO', embedUrl: drive('1OH-yr3UepjBLbNNnPbCEBjuTpX2PMGfl') },
+    ],
+  },
+  {
+    id: 'music',
+    nav: 'Music',
+    title: 'MUSIC VID / MUSIC STILLS',
+    eyebrow: 'MUSIC VIDEO / STILLS',
+    description: 'Music video pieces, stills and artist-led visual work. Stills and videos open in the same on-site viewer.',
+    items: [
+      { title: 'Eleazar Part 1', role: 'MUSIC VIDEO', format: 'VIDEO / STILLS', embedUrl: drive('1DuQKVazf8mQU5uu_olHFk1how6eOeSIK') },
+      { title: 'Stills for Music Video Part 1', role: 'MUSIC STILLS', format: 'STILLS', embedUrl: drive('1k9AlCQ37fKxpv6mi5fwUVmQJbWEtglAH') },
+      { title: 'Take A Touch - Videography Part 1A', role: 'VIDEOGRAPHY', format: 'VIDEO', embedUrl: drive('1FuqPDWnpAZFlEtpU7ZnQPSBQYOZEuLFY') },
+      { title: 'Take A Touch - Videography Part 1B', role: 'VIDEOGRAPHY', format: 'VIDEO', embedUrl: drive('1keI9ale7b_7CjrDSTfAQduQGo1V5gLTL') },
+      { title: 'Eleazar Part 2A', role: 'MUSIC VIDEO', format: 'VIDEO / STILLS', embedUrl: drive('14-Q1UjYzPCUQiSQJRx6CYzk2AOKviJik') },
+      { title: 'Eleazar Part 2B', role: 'MUSIC VIDEO', format: 'VIDEO / STILLS', embedUrl: drive('1JDw5Xx5tdBmsKXQksbnBH1zQW7jTUg7J') },
+      { title: 'Take A Touch - Videography Part 2A', role: 'VIDEOGRAPHY', format: 'VIDEO', embedUrl: drive('1S0B7u_5VWpkskEMFusaaRC_N9cO-CdvN') },
+      { title: 'Take A Touch - Videography Part 2B', role: 'VIDEOGRAPHY', format: 'VIDEO', embedUrl: drive('1VSHRJYSz3aOIBgKaDmpLS8UotsGCoKC4') },
+      { title: 'Take A Touch - Videography Part 2C', role: 'VIDEOGRAPHY', format: 'VIDEO', embedUrl: drive('1erYP3aDkQsYui6dXAnUbra82frcYZwhr') },
+      { title: 'Eleazar Part 3A', role: 'MUSIC VIDEO', format: 'VIDEO / STILLS', embedUrl: drive('1pZVHJJbfAlvFDteMup9Elx1FbVgDZi4k') },
+      { title: 'Eleazar Part 3B', role: 'MUSIC VIDEO', format: 'VIDEO / STILLS', embedUrl: drive('1kCteq9piqDhequPtE_dCuHMJrh7u-OAc') },
+      { title: 'Stills for Music Video Part 2', role: 'MUSIC STILLS', format: 'STILLS', embedUrl: drive('1aba-KUCJC1IBWXz8Nukb6kAYmhmoqV53') },
+      { title: 'Take A Touch - Videography Part 3', role: 'VIDEOGRAPHY', format: 'VIDEO', embedUrl: drive('1kyMDmRhgQuNV9ZsuQ-wJF-Vto7MOSkNk') },
+    ],
+  },
+  {
+    id: 'assisting',
+    nav: 'Assisting / SUPERDRY',
+    title: 'SUPERDRY ASSISTING',
+    eyebrow: 'ASSISTING CREDITS',
+    description: 'Assisting work for SUPERDRY, kept separate from lead portfolio pieces but viewable directly on-site.',
+    items: [
+      { title: 'Fleece 15s DG Branded', role: 'ASSISTING', format: 'VIDEO', embedUrl: drive('1icHXGZSg_YD89gBC1fd-wtftODKXC3aN') },
+      { title: 'Jackets D1 30s DG Branded', role: 'ASSISTING', format: 'VIDEO', embedUrl: drive('1tGnjYD7idOiBGbryx7O4HYpS6XMZUP8r') },
+      { title: 'Jackets D2 30s DG Branded', role: 'ASSISTING', format: 'VIDEO', embedUrl: drive('1y0YyhlUpqzwRGJjD4QV2XEKvduWMT6Ns') },
+      { title: 'SS25 Library Dual 30sec Film Branded', role: 'ASSISTING', format: 'VIDEO', embedUrl: drive('1bd99SwdG6MuBpPqr9coYRQtFKPwlssOf') },
+      { title: 'SS25 Regency Dual 30sec Film Branded', role: 'ASSISTING', format: 'VIDEO', embedUrl: drive('1hgL0JAWCQUyhO2KLivyoHhbu6AcEAZIu') },
+      { title: 'Wet DG 15s Grade', role: 'ASSISTING', format: 'VIDEO', embedUrl: drive('1_bVX8A_9AMeELP8eBolz_Yjq3r7vQaLr') },
+      { title: 'Wind DG 15s Grade', role: 'ASSISTING', format: 'VIDEO', embedUrl: drive('1fpG9tVOwOXPh6eG_l-NFSSD77WUOdTnY') },
+    ],
+  },
+  {
+    id: 'big-sky',
+    nav: 'Big Sky',
+    title: 'BIG SKY CONTENT',
+    eyebrow: 'PROJECT / SERIES',
+    description: 'A dedicated Big Sky section, ready to grow into its own case-study page later.',
+    items: [
+      { title: 'C0044', role: 'BIG SKY CONTENT', format: 'VIDEO', embedUrl: drive('1zVHqF0-yUpgJbM27fXp5V0OxNA7QLQXd') },
+      { title: 'EASYRIG-BS_DB', role: 'BIG SKY CONTENT', format: 'VIDEO', embedUrl: drive('1se6xov_yWRBf5cqyMlJRnpcULPAmS06N') },
+      { title: 'STORM XT52', role: 'BIG SKY CONTENT', format: 'VIDEO', embedUrl: drive('1sJd006-nKr8ibnUD_OuxqvU6QACwy7YE') },
+    ],
+  },
+  {
+    id: 'photography',
+    nav: 'Photography',
+    title: 'PHOTOGRAPHY',
+    eyebrow: 'PORTRAIT / FILM / STILLS',
+    description: 'Photography section prepared for portrait work and film-camera selections once Theo has the final gallery folder ready.',
+    items: [
+      { title: 'Film Camera', role: 'ANALOGUE PHOTOGRAPHY', format: 'INSTAGRAM', externalUrl: 'https://www.instagram.com/theomajer.filmcamera/' },
+      { title: 'Portrait Series', role: 'PHOTOGRAPHY', format: 'COMING SOON' },
+      { title: 'Behind The Light', role: 'BTS / PROCESS', format: 'STILLS' },
+    ],
+  },
+];
+
+export const featuredStats = [
+  { label: 'SELECTED WORK', value: '48+' },
+  { label: 'FOCUS', value: 'MOVING IMAGE' },
+  { label: 'BASE', value: 'LONDON' },
+];
