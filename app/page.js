@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import PageShell from '@/components/PageShell';
 import { categories, getItems } from '@/data/portfolio';
@@ -26,8 +25,11 @@ export default function Home() {
               <a className="btn" href="https://www.instagram.com/theo.majer/" target="_blank">Instagram</a>
             </div>
           </div>
-          <div className="profile-wrap parallax-card reveal-card">
-            <Image className="profile" src="/profile.jpg" width={900} height={900} alt="Theo Majer with camera" priority />
+
+          <div className="hero-side-panel reveal-card" style={{ '--delay': '120ms' }}>
+            <span>Selected Moving Image</span>
+            <strong>Fashion / Music / Lighting / Assisting</strong>
+            <small>Scroll to enter the portfolio index.</small>
           </div>
         </div>
         <a className="scroll-cue" href="#featured">Scroll</a>
