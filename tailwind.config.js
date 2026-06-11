@@ -1,22 +1,5 @@
-{
-  "name": "theo-portfolio",
-  "version": "2.1.1",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "15.5.7",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "lucide-react": "^0.468.0"
-  },
-  "devDependencies": {
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.15",
-    "autoprefixer": "^10.4.20"
-  }
-}
+# Theo Portfolio
+
+Next.js portfolio for Theo Majer with embedded Google Drive previews.
+
+Edit portfolio content in `data/projects.js`.

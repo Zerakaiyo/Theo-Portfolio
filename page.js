@@ -1,23 +1,18 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './data/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['var(--font-sans)', 'Inter', 'Arial', 'sans-serif'],
-        serif: ['var(--font-serif)', 'Georgia', 'serif'],
-      },
-      letterSpacing: {
-        'cinema': '0.32em',
-      },
-      backgroundImage: {
-        'grain': "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.11) 1px, transparent 0)",
-      },
-    },
-  },
-  plugins: [],
-};
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #050505;
+  color: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+button, a { font: inherit; }
+.drive-frame { width: 100%; height: min(70vh, 720px); border: 0; background: #000; }
+.card-glow { background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); }
