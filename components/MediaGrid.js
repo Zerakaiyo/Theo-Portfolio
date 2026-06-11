@@ -5,32 +5,56 @@ export default function MediaGrid({ items, slug }) {
 
   return (
     <>
-      <div className="grid">
+      <div className="grid media-grid">
         {items.map((item) => {
           const modalId = `${slug}-${item.index}`;
           return (
-            <a className="card" href={`#${modalId}`} key={modalId}>
-              <div className="card-visual">VIEW ON SITE</div>
-              <div>
-                <h3>{item.title}</h3>
-                <div className="meta">{item.role}</div>
+            <article className="media-card" key={modalId}>
+              <div className="preview-frame">
+                <iframe
+                  src={item.embedUrl}
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                  title={`${item.title} preview`}
+                  loading="lazy"
+                />
               </div>
-            </a>
+
+              <div className="media-card-bottom">
+                <div>
+                  <h3>{item.title}</h3>
+                  <div className="meta">{item.role}</div>
+                </div>
+                <a className="fullscreen-btn" href={`#${modalId}`} aria-label={`Open ${item.title} fullscreen`}>
+                  ⛶
+                </a>
+              </div>
+            </article>
           );
         })}
       </div>
+
       {items.map((item) => {
         const modalId = `${slug}-${item.index}`;
         return (
           <div className="modal" id={modalId} key={`${modalId}-modal`}>
             <div className="modal-box">
               <div className="modal-top">
-                <div className="modal-title">{item.title}</div>
+                <div>
+                  <div className="modal-title">{item.title}</div>
+                  <div className="modal-role">{item.role}</div>
+                </div>
                 <a href="#" className="close">Close</a>
               </div>
-              <div className="frame">
-                <iframe src={item.embedUrl} allow="autoplay; fullscreen" allowFullScreen title={item.title}></iframe>
+              <div className="frame large-frame">
+                <iframe
+                  src={item.embedUrl}
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                  title={item.title}
+                />
               </div>
+              <p className="viewer-note">Use the Google Drive player controls for play, pause, volume, timeline and fullscreen.</p>
             </div>
           </div>
         );

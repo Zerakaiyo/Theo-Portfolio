@@ -74,22 +74,56 @@ h1 { font-size: clamp(54px, 10vw, 140px); line-height: .88; margin: 0; letter-sp
 .stat strong { display: block; font-size: 28px; letter-spacing: 0.06em; }
 .stat span { color: var(--muted); font-size: 10px; }
 .section { padding: 90px 0; border-top: 1px solid var(--line); }
-.section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 36px; }
+.section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 36px; }
 h2 { margin: 0; font-size: clamp(30px, 6vw, 72px); letter-spacing: 0.18em; }
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .card { border: 1px solid var(--line); background: rgba(255,255,255,0.03); min-height: 245px; display: flex; flex-direction: column; justify-content: space-between; padding: 18px; cursor: pointer; color: var(--text); text-align: left; }
 .card:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.35); }
 .card-visual { min-height: 150px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,0.08); background: radial-gradient(circle at 50% 45%, rgba(255,255,255,0.1), rgba(255,255,255,0.02)); color: var(--muted); font-size: 11px; margin-bottom: 16px; }
-.card h3 { font-size: 15px; letter-spacing: 0.12em; margin: 0 0 10px; }
+.card h3, .media-card h3 { font-size: 15px; letter-spacing: 0.12em; margin: 0 0 10px; }
 .meta { color: var(--muted); font-size: 10px; line-height: 1.6; }
+.media-grid { align-items: start; }
+.media-card {
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.035);
+  padding: 12px;
+  min-height: 100%;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+.media-card:hover { background: rgba(255,255,255,0.065); border-color: rgba(255,255,255,0.34); transform: translateY(-2px); }
+.preview-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+.preview-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.media-card-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; padding: 16px 4px 2px; }
+.fullscreen-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  font-size: 20px;
+  line-height: 1;
+  background: rgba(255,255,255,0.04);
+}
+.fullscreen-btn:hover { border-color: var(--text); background: rgba(255,255,255,0.1); }
 .modal { position: fixed; inset: 0; z-index: 60; background: rgba(0,0,0,0.9); display: none; align-items: center; justify-content: center; padding: 28px; }
 .modal:target { display: flex; }
 .modal-box { width: min(1080px, 100%); }
 .modal-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 20px; }
 .modal-title { font-weight: 800; letter-spacing: 0.2em; }
+.modal-role { color: var(--muted); font-size: 10px; margin-top: 8px; }
 .close { border: 1px solid var(--line); padding: 10px 14px; border-radius: 999px; color: var(--text); }
 .frame { width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--line); background: #000; }
+.large-frame { max-height: 78vh; }
 .frame iframe { width: 100%; height: 100%; border: 0; }
+.viewer-note { color: var(--muted); text-transform: none; letter-spacing: 0.02em; font-size: 12px; margin: 12px 0 0; }
 .page-hero { padding: 96px 0 52px; }
 .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .footer { border-top: 1px solid var(--line); padding: 32px 0; color: var(--muted); font-size: 10px; }
@@ -98,6 +132,7 @@ h2 { margin: 0; font-size: clamp(30px, 6vw, 72px); letter-spacing: 0.18em; }
   .nav-links { flex-wrap: wrap; gap: 16px; }
   .dropdown-menu { position: static; display: grid; margin-top: 8px; }
   .hero-grid, .grid, .contact-grid { grid-template-columns: 1fr; }
+  .media-card-bottom { align-items: center; }
   .stats { grid-template-columns: 1fr; }
   .section-head { display: block; }
 }
