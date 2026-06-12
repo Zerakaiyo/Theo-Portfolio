@@ -9,40 +9,31 @@ const featured = [
   { ...getItems('big-sky')[0], href: '/big-sky', label: 'Big Sky' }
 ];
 
+const services = [
+  { title: 'Portrait Photography', detail: 'Two Hours / Basic Edits', price: '£160 - £180' },
+  { title: 'Product Photography', detail: 'Two Hours / Basic Edits', price: '£160 - £180' },
+  { title: 'Music / Event Video', detail: 'Basic Edits', price: '£350 - £400' },
+  { title: 'Raw Footage Video', detail: 'Music / Event', price: '£200 - £250' }
+];
+
 export default function Home() {
   return (
     <PageShell>
-      <section className="hero cinematic-hero" id="top">
+      <section className="hero cinematic-hero minimal-hero" id="top">
         <div className="hero-vignette" />
-        <div className="container hero-grid">
-          <div className="hero-copy reveal-card">
-            <div className="kicker">DOP / PHOTOGRAPHY / LIGHTING</div>
-            <h1>THEO MAJER</h1>
-            <p>A cinematic portfolio for moving image, lighting, assisting credits, social content and portrait photography.</p>
-            <div className="hero-actions">
-              <Link className="btn" href="#featured">Featured Work</Link>
-              <Link className="btn" href="#portfolio">Portfolio</Link>
-              <a className="btn" href="https://www.instagram.com/theo.majer/" target="_blank">Instagram</a>
-            </div>
-          </div>
-
-          <div className="hero-side-panel reveal-card" style={{ '--delay': '120ms' }}>
-            <span>Selected Moving Image</span>
-            <strong>Fashion / Music / Lighting / Assisting</strong>
-            <small>Scroll to enter the portfolio index.</small>
-          </div>
+        <div className="container hero-minimal reveal-card">
+          <h1>THEO MAJER</h1>
+          <Link className="minimal-scroll" href="#featured" aria-label="Scroll to work">↓</Link>
         </div>
-        <a className="scroll-cue" href="#featured">Scroll</a>
       </section>
 
       <section className="section featured-section" id="featured">
         <div className="container">
-          <div className="section-head reveal-card">
+          <div className="section-head minimal-head reveal-card">
             <div>
-              <div className="kicker">Selected Frames</div>
+              <div className="kicker">Selected</div>
               <h2>Featured Work</h2>
             </div>
-            <p className="lead">A first-look reel of selected projects. Each piece can be opened into a larger on-site viewer.</p>
           </div>
           <div className="featured-reel">
             {featured.map((item, index) => (
@@ -61,12 +52,11 @@ export default function Home() {
 
       <section className="section portfolio-index" id="portfolio">
         <div className="container">
-          <div className="section-head reveal-card">
+          <div className="section-head minimal-head reveal-card">
             <div>
-              <div className="kicker">Browse by Body of Work</div>
+              <div className="kicker">Index</div>
               <h2>Portfolio</h2>
             </div>
-            <p className="lead">Separate spaces for fashion film, clothing, music, assisting, Big Sky and future photography.</p>
           </div>
           <div className="grid category-grid">
             {categories.map((category, index) => (
@@ -75,29 +65,39 @@ export default function Home() {
                   <span>{String(index + 1).padStart(2, '0')}</span>
                   <strong>{category.title}</strong>
                 </div>
-                <div><h3>{category.title}</h3><div className="meta">Open Collection</div></div>
+                <div className="meta">Open Collection</div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section about-strip" id="about">
-        <div className="container split-section reveal-card">
-          <div>
-            <div className="kicker">About</div>
-            <h2>Visual Rhythm, Light, Movement.</h2>
+      <section className="section services-section" id="services">
+        <div className="container">
+          <div className="services-intro reveal-card">
+            <div className="kicker">Services</div>
+            <h2>Available Services</h2>
+            <p>Prices are a guide. Contact for tailored quotes.</p>
           </div>
-          <p className="lead">Theo Majer works across moving image, photography and lighting, with selected projects spanning fashion film, clothing campaigns, music content, assisting work and visual storytelling.</p>
+          <div className="services-grid">
+            {services.map((service, index) => (
+              <div className="service-card reveal-card" key={service.title} style={{ '--delay': `${index * 60}ms` }}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{service.title}</h3>
+                <p>{service.detail}</p>
+                <strong>{service.price}</strong>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="section" id="contact">
+      <section className="section contact-section" id="contact">
         <div className="container">
-          <div className="section-head reveal-card"><h2>Contact</h2></div>
+          <div className="section-head minimal-head reveal-card"><h2>Contact</h2></div>
           <div className="contact-grid">
-            <a className="card reveal-card" href="mailto:hello@example.com"><div className="card-visual">Email</div><h3>Email Theo</h3></a>
-            <a className="card reveal-card" href="https://www.instagram.com/theo.majer/" target="_blank"><div className="card-visual">Instagram</div><h3>Main Instagram</h3></a>
+            <a className="card reveal-card" href="mailto:hello@example.com"><div className="card-visual">Email</div><h3>Email</h3></a>
+            <a className="card reveal-card" href="https://www.instagram.com/theo.majer/" target="_blank"><div className="card-visual">Instagram</div><h3>Main</h3></a>
             <a className="card reveal-card" href="https://www.instagram.com/theomajer.filmcamera/" target="_blank"><div className="card-visual">Film</div><h3>Film Camera</h3></a>
           </div>
         </div>

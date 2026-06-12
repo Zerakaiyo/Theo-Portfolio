@@ -20,11 +20,7 @@ export default function Navbar() {
     closeTimer.current = setTimeout(() => setPortfolioOpen(false), 180);
   }
 
-  useEffect(() => {
-    return () => {
-      if (closeTimer.current) clearTimeout(closeTimer.current);
-    };
-  }, []);
+  useEffect(() => () => closeTimer.current && clearTimeout(closeTimer.current), []);
 
   const closeAll = () => {
     setMenuOpen(false);
@@ -38,7 +34,10 @@ export default function Navbar() {
           <span className="nav-avatar-wrap">
             <Image className="nav-avatar" src="/profile.jpg" width={52} height={52} alt="Theo Majer" priority />
           </span>
-          <span className="logo-text">THEO MAJER</span>
+          <span className="logo-stack">
+            <span className="logo-text">THEO MAJER</span>
+            <span className="logo-subtitle">DOP / PHOTOGRAPHY / LIGHTING</span>
+          </span>
         </Link>
 
         <button
@@ -62,13 +61,12 @@ export default function Navbar() {
               Portfolio <span>▾</span>
             </button>
             <div className="dropdown-menu">
-              <Link href="/#portfolio" onClick={closeAll}>Portfolio Overview</Link>
+              <Link href="/#portfolio" onClick={closeAll}>Overview</Link>
               {categories.map((category) => (
                 <Link key={category.slug} href={category.href} onClick={closeAll}>{category.title}</Link>
               ))}
             </div>
           </div>
-          <Link className="nav-link" href="/#about" onClick={closeAll}>About</Link>
           <Link className="nav-link" href="/#contact" onClick={closeAll}>Contact</Link>
         </nav>
       </div>
