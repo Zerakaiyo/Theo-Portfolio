@@ -10,10 +10,26 @@ const featured = [
 ];
 
 const services = [
-  { title: 'Portrait Photography', detail: 'Two Hours / Basic Edits', price: '£160 - £180' },
-  { title: 'Product Photography', detail: 'Two Hours / Basic Edits', price: '£160 - £180' },
-  { title: 'Music / Event Video', detail: 'Basic Edits', price: '£350 - £400' },
-  { title: 'Raw Footage Video', detail: 'Music / Event', price: '£200 - £250' }
+  {
+    title: 'Photography',
+    detail: 'Portraits / Fashion / Product / Events',
+    note: 'Still image work for people, brands and creative campaigns.'
+  },
+  {
+    title: 'Videography',
+    detail: 'Fashion Films / Music Videos / Events',
+    note: 'Moving image work for artists, brands and visual projects.'
+  },
+  {
+    title: 'Social Content',
+    detail: 'Reels / Short Form / Behind The Scenes',
+    note: 'Vertical and campaign-ready content for digital platforms.'
+  },
+  {
+    title: 'Production Support',
+    detail: 'Camera Assist / Lighting / BTS',
+    note: 'Support across shoots, lighting setups and production days.'
+  }
 ];
 
 export default function Home() {
@@ -76,8 +92,8 @@ export default function Home() {
         <div className="container">
           <div className="services-intro reveal-card">
             <div className="kicker">Services</div>
-            <h2>Available Services</h2>
-            <p>Prices are a guide. Contact for tailored quotes.</p>
+            <h2>Services</h2>
+            <p>Every project is different. For availability, rates and project enquiries, get in touch directly.</p>
           </div>
           <div className="services-grid">
             {services.map((service, index) => (
@@ -85,7 +101,7 @@ export default function Home() {
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <h3>{service.title}</h3>
                 <p>{service.detail}</p>
-                <strong>{service.price}</strong>
+                <strong>{service.note}</strong>
               </div>
             ))}
           </div>
