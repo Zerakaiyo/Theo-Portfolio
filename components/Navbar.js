@@ -1,74 +1,34 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { categories } from '@/data/portfolio';
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [portfolioOpen, setPortfolioOpen] = useState(false);
-  const closeTimer = useRef(null);
-
-  function openPortfolio() {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-    setPortfolioOpen(true);
-  }
-
-  function closePortfolioSoon() {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-    closeTimer.current = setTimeout(() => setPortfolioOpen(false), 180);
-  }
-
-  useEffect(() => () => closeTimer.current && clearTimeout(closeTimer.current), []);
-
-  const closeAll = () => {
-    setMenuOpen(false);
-    setPortfolioOpen(false);
-  };
-
+  const [open, setOpen] = useState(false);
   return (
-    <header className="nav">
-      <div className="container nav-inner">
-        <Link href="/" className="logo-lockup" onClick={closeAll} aria-label="Theo Majer home">
-          <span className="nav-avatar-wrap">
-            <Image className="nav-avatar" src="/profile.jpg" width={52} height={52} alt="Theo Majer" priority />
-          </span>
-          <span className="logo-stack">
-            <span className="logo-text">THEO MAJER</span>
-            <span className="logo-subtitle">DOP / PHOTOGRAPHY / LIGHTING</span>
-          </span>
-        </Link>
-
-        <button
-          className="mobile-menu-button"
-          type="button"
-          onClick={() => setMenuOpen((value) => !value)}
-          aria-label="Toggle navigation menu"
-          aria-expanded={menuOpen}
-        >
-          <span />
-          <span />
-        </button>
-
-        <nav className={`nav-links ${menuOpen ? 'is-open' : ''}`} aria-label="Main navigation">
-          <div
-            className={`dropdown ${portfolioOpen ? 'is-open' : ''}`}
-            onMouseEnter={openPortfolio}
-            onMouseLeave={closePortfolioSoon}
-          >
-            <button className="nav-link dropdown-trigger" type="button" onClick={() => setPortfolioOpen((value) => !value)}>
-              Portfolio <span>▾</span>
-            </button>
-            <div className="dropdown-menu">
-              <Link href="/#portfolio" onClick={closeAll}>Overview</Link>
-              {categories.map((category) => (
-                <Link key={category.slug} href={category.href} onClick={closeAll}>{category.title}</Link>
-              ))}
-            </div>
+    <header className="nav-shell">
+      <Link href="/" className="brand" aria-label="Theo Majer home">
+        <img src="/profile.jpg" alt="Theo Majer" />
+        <span>
+          <strong>THEO MAJER</strong>
+          <small>DOP / PHOTOGRAPHY / LIGHTING</small>
+        </span>
+      </Link>
+      <nav className="desktop-nav">
+        <div className="nav-drop" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+          <Link href="/portfolio" className="nav-link">PORTFOLIO</Link>
+          <div className={`drop-menu ${open ? 'show' : ''}`}>
+            {categories.map(c => <Link key={c.slug} href={`/portfolio/${c.slug}`}>{c.title}</Link>)}
           </div>
-          <Link className="nav-link" href="/#contact" onClick={closeAll}>Contact</Link>
-        </nav>
+        </div>
+        <Link href="/contact" className="nav-link">CONTACT</Link>
+      </nav>
+      <button className="mobile-toggle" onClick={() => setOpen(!open)}>MENU</button>
+      <div className={`mobile-menu ${open ? 'show' : ''}`}>
+        <Link href="/portfolio">Portfolio</Link>
+        {categories.map(c => <Link key={c.slug} href={`/portfolio/${c.slug}`}>{c.title}</Link>)}
+        <Link href="/contact">Contact</Link>
       </div>
     </header>
   );

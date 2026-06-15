@@ -1,86 +1,68 @@
-const file = (id) => `https://drive.google.com/file/d/${id}/preview`;
-
 export const categories = [
-  { title: 'Fashion Films', slug: 'fashion-films', href: '/fashion-films' },
-  { title: 'Clothing', slug: 'clothing', href: '/clothing' },
-  { title: 'Music', slug: 'music', href: '/music' },
-  { title: 'Assisting', slug: 'assisting', href: '/assisting' },
-  { title: 'Big Sky', slug: 'big-sky', href: '/big-sky' },
-  { title: 'Photography', slug: 'photography', href: '/photography' }
-];
-
-export const portfolio = {
-  'fashion-films': [
-    ['Arop Akol','1y2Bv7axo9tawyVuVa_C_mtFam_iqo9bT'],
-    ['Can I Entertain {1}','10dJ_fpVVpuyzyCnxzyNRzViJP8DkHEla'],
-    ['Can I Entertain {2}','1dcpWzq5GmWWxV3w0A15Zuyd92WWdyTAV'],
-    ['Du Deurre - Final V','1kjriMkqyZkMhyhfmzru_JKfPa4V-8HwC'],
-    ['Era 2 Era PT.1','13eMEOliACN6_0MU9nYPxMrsSxQDksi5B'],
-    ['Era 2 Era PT.2','1DtFnfmEYNLO4xlCg79D9wEQ7CUi_cW1u'],
-    ['Like This Unseen (Handycam)','1JGPNrixkSWTWPrTYOsb-HCgFGdQ79D2m'],
-    ['Like This Unseen PT.1','1ECfAyY20NXrKIz2Oq5gelSgiALQPKy0t'],
-    ['Like This Unseen PT.2','1jjB0jlItDkR3M9eY3qs21Pq_KiuWGGxq'],
-    ['Outside The Circle - BTS','1my0x6npbaz-c9rD_8H-w48qTJipjnEjv'],
-    ['Outside The Circle - Timothy','1tvHcrJF5bSZRbSUczsZn9UQapsvY9V4J'],
-    ['RGB {PT.1}','1fy1Wrkuo1rJ0FCSzFuLsRcviJoF1Qigv'],
-    ['RGB {PT.2}','1iM8KXccFSr6k2mtr46rSXDMi0iyBBGED'],
-    ['State of Still {PT.1}','1M6ROqSH52D9YatD2Rd8gfN7hrThQAq2L'],
-    ['State of Still {PT.2}','1Awk4riyiPEB6e6H_doiM4wpGjDqTQoIO'],
-    ['Taste of Time','1rnHpJQ6fQi_PbcaxAVBQT29F9oqJIqqZ']
-  ],
-  clothing: [
-    ['Victor Clothing Videos {PT.1}','1hBmUH4M3Wxoq5oIE5kBtt_YCTijgNapj'],
-    ['Victor Clothing Videos {PT.2}','175c7dUTkshww356ctPx7VjemxQmO-Z73'],
-    ['Victor Clothing Videos {PT.3}','1rBp_HEa7pBCOgokledz3flk7VbEPe_Cg'],
-    ['Victor Clothing Videos {PT.4}','1VVz2XW22GSZGnWj8eQBHbUQdcR_15EcC'],
-    ['Victor Clothing Videos {PT.5}','14hIz_czI2uGEjRixPERTkK4stzTfk0yk'],
-    ['Victor Clothing Videos {PT.6}','10tw1BttKQrXCJ4OfNT0XPNB7Z-HpzfD5'],
-    ['Victor Clothing Videos {PT.7}','1LMplkIl5PSiJtEZilmmmhNbDBQttQnyp'],
-    ['Victor Clothing Videos {PT.8}','1lqkMked6qxa7ykFqdu0N6l_8eyertj8n'],
-    ['Victor Clothing Videos {PT.9}','1OH-yr3UepjBLbNNnPbCEBjuTpX2PMGfl']
-  ],
-  music: [
-    ['Eleazar Part 1','1DuQKVazf8mQU5uu_olHFk1how6eOeSIK'],
-    ['Stills for Music Video Part 1','1k9AlCQ37fKxpv6mi5fwUVmQJbWEtglAH'],
-    ['Take A Touch - Videography Part 1A','1FuqPDWnpAZFlEtpU7ZnQPSBQYOZEuLFY'],
-    ['Take A Touch - Videography Part 1B','1keI9ale7b_7CjrDSTfAQduQGo1V5gLTL'],
-    ['Eleazar Part 2A','14-Q1UjYzPCUQiSQJRx6CYzk2AOKviJik'],
-    ['Eleazar Part 2B','1JDw5Xx5tdBmsKXQksbnBH1zQW7jTUg7J'],
-    ['Take A Touch - Videography Part 2A','1S0B7u_5VWpkskEMFusaaRC_N9cO-CdvN'],
-    ['Take A Touch - Videography Part 2B','1VSHRJYSz3aOIBgKaDmpLS8UotsGCoKC4'],
-    ['Take A Touch - Videography Part 2C','1erYP3aDkQsYui6dXAnUbra82frcYZwhr'],
-    ['Eleazar Part 3A','1pZVHJJbfAlvFDteMup9Elx1FbVgDZi4k'],
-    ['Eleazar Part 3B','1kCteq9piqDhequPtE_dCuHMJrh7u-OAc'],
-    ['Stills for Music Video Part 2','1aba-KUCJC1IBWXz8Nukb6kAYmhmoqV53'],
-    ['Take A Touch - Videography Part 3','1kyMDmRhgQuNV9ZsuQ-wJF-Vto7MOSkNk']
-  ],
-  assisting: [
-    ['Fleece 15s DG Branded','1icHXGZSg_YD89gBC1fd-wtftODKXC3aN'],
-    ['Jackets D1 30s DG Branded','1tGnjYD7idOiBGbryx7O4HYpS6XMZUP8r'],
-    ['Jackets D2 30s DG Branded','1y0YyhlUpqzwRGJjD4QV2XEKvduWMT6Ns'],
-    ['SS25 Library Dual 30sec Film Branded','1bd99SwdG6MuBpPqr9coYRQtFKPwlssOf'],
-    ['SS25 Regency Dual 30sec Film Branded','1hgL0JAWCQUyhO2KLivyoHhbu6AcEAZIu'],
-    ['Wet DG 15s Grade','1_bVX8A_9AMeELP8eBolz_Yjq3r7vQaLr'],
-    ['Wind DG 15s Grade','1fpG9tVOwOXPh6eG_l-NFSSD77WUOdTnY']
-  ],
-  'big-sky': [
-    ['C0044','1zVHqF0-yUpgJbM27fXp5V0OxNA7QLQXd'],
-    ['EASYRIG-BS_DB','1se6xov_yWRBf5cqyMlJRnpcULPAmS06N'],
-    ['STORM XT52','1sJd006-nKr8ibnUD_OuxqvU6QACwy7YE']
-  ],
-  photography: []
-};
-
-export function getItems(slug) {
-  return (portfolio[slug] || []).map(([title, id], index) => ({
+  {
+    slug: 'fashion-films',
+    title: 'Fashion Films',
+    kicker: 'Fashion / Film',
+    description: 'Selected moving image work.',
+    featured: 'Gcel7y6SwC8',
+    items: [
+      ['Gcel7y6SwC8','Arop Akol'],['OELOPUWMG8c','Can I Entertain PT.1'],['U5Q393xIlYo','Can I Entertain PT.2'],['QRmKW-pn_08','Du Deurre'],['ysFOeBxdC1o','Era 2 Era PT.1'],['Sm0koJQx6IM','Era 2 Era PT.2'],['IelTKU7Jt64','Like This Unseen Handycam'],['p1rsAbMFGWg','Like This Unseen PT.1'],['c98LbG21208','Like This Unseen PT.2'],['NiyzYN7hRy0','Outside The Circle BTS'],['SbqZrTf_zdk','Outside The Circle Timothy'],['ZSynkkXLlxw','RGB PT.1'],['ve3-eI6Z6Ao','RGB PT.2'],['EXvXXvyqQHI','State Of Still PT.1'],['kfePi4RKuxQ','State Of Still PT.2'],['V6_CGFiYG3g','Taste Of Time','short']
+    ]
+  },
+  {
+    slug: 'clothing',
+    title: 'Clothing',
+    kicker: 'Edited Videos',
+    description: 'Victor clothing edits and vertical content.',
+    featured: '0EYTirQp85M',
+    items: [
+      ['0EYTirQp85M','Victor Clothing PT.1','short'],['6uZui6K4VVI','Victor Clothing PT.2','short'],['VIVgjSpC9B4','Victor Clothing PT.3','short'],['frvjt1knH3g','Victor Clothing PT.4','short'],['gbFItuIpcbE','Victor Clothing PT.5','short'],['ET1NBiquL4s','Victor Clothing PT.6','short'],['aPbYVuU2fhM','Victor Clothing PT.7','short'],['ulWEfxtVO9g','Victor Clothing PT.8','short'],['hGoEvBk4MsM','Victor Clothing PT.9','short']
+    ]
+  },
+  {
+    slug: 'music',
+    title: 'Music',
+    kicker: 'Music Videos / Stills',
+    description: 'Music-led videography, stills and short-form work.',
+    featured: 'vLNXrpbxXfo',
+    items: [
+      ['AcAkDsWnvn0','Music Stills'],['vLNXrpbxXfo','Take A Touch Videography PT.1'],['z93SxUd5gOw','Take A Touch Videography PT.2','short'],['7PorucLQXTI','Take A Touch Videography PT.3','short'],['fwQKDnmpJP8','Take A Touch Videography PT.4','short'],['UJJ44TyzBBo','Take A Touch Videography PT.5','short'],['9W0G7LrQ_sM','Take A Touch Videography PT.6','short'],['-YmuOT6-HPk','Stills For Music Video PT.1'],['Yi-l2c1e2TQ','Stills For Music Video PT.2'],['D7lhjyPEzOc','Eleazar PT.1','short'],['BG_RcfIW-Lw','Eleazar PT.2','short'],['8EtYsn5cKd8','Eleazar PT.3','short'],['jgFmPVrW8D4','Eleazar PT.4','short'],['iXBCaboGVCk','Eleazar PT.5','short']
+    ]
+  },
+  {
+    slug: 'big-sky',
+    title: 'Big Sky',
+    kicker: 'Content',
+    description: 'Selected production and equipment-led content.',
+    featured: 'xDp_n0XhJSY',
+    items: [
+      ['xDp_n0XhJSY','C0044','short'],['3E0GByLjdS8','EASYRIG BS DB','short'],['fz9okQQBOiw','STORM XT52','short']
+    ]
+  },
+  {
+    slug: 'assisting',
+    title: 'Assisting',
+    kicker: 'SUPERDRY',
+    description: 'Assisting and branded production support.',
+    featured: 'gpfnChGZqwU',
+    items: [
+      ['gpfnChGZqwU','Fleece 15s DG Branded'],['h6jLvsoj9QA','Jackets D1 30s DG Branded'],['BJtMvYvdvAo','Jackets D2 30s DG Branded'],['Ycxsyg-7OBc','SS25 Library Dual 30s'],['4jrUUqBDl_w','SS25 Regency Dual 30s'],['ikikMSwz_e8','Wet DG 15s Grade'],['WKjmKVB2cww','Wind DG 15s Grade']
+    ]
+  }
+].map(category => ({
+  ...category,
+  items: category.items.map(([youtubeId, title, format]) => ({
+    youtubeId,
     title,
-    id,
-    embedUrl: file(id),
-    role: slug === 'assisting' ? 'Assisting' : 'DOP / Photography / Lighting',
-    index: index + 1
-  }));
-}
+    format: format || 'wide',
+    role: category.slug === 'assisting' ? 'Assisting' : category.slug === 'music' ? 'Videography / Stills' : category.slug === 'clothing' ? 'Edited Video' : 'DOP / Photography / Lighting'
+  }))
+}));
 
 export function getCategory(slug) {
-  return categories.find((category) => category.slug === slug);
+  return categories.find(category => category.slug === slug);
+}
+
+export function youtubeThumb(id) {
+  return `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
 }
