@@ -9,15 +9,14 @@ export default function Home() {
       <Navbar />
       <SectionTracker />
 
-      <section className="flex min-h-[58vh] items-end border-b border-white/10 px-4 pb-16 pt-32 sm:px-6 lg:px-8">
+      <section className="flex min-h-[40vh] items-end border-b border-white/10 px-4 pb-10 pt-28 sm:min-h-[46vh] sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-7xl">
-          <div className="mb-8 h-px w-full bg-gradient-to-r from-white/10 via-white/30 to-white/10" />
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="mb-8 h-px w-full bg-gradient-to-r from-white/10 via-white/25 to-white/10" />
+          <div className="flex items-end justify-between gap-6">
             <div>
-              <div className="text-[10px] uppercase tracking-[.4em] text-white/35">Selected Work</div>
-              <h1 className="mt-5 max-w-3xl text-4xl font-semibold uppercase tracking-[.22em] text-white sm:text-6xl lg:text-8xl">Film / Photo / Light</h1>
+              <div className="text-[10px] uppercase tracking-[.4em] text-white/35">Selected Moving Image</div>
             </div>
-            <a href="#fashion-films" className="w-fit rounded-full border border-white/15 px-6 py-4 text-[10px] uppercase tracking-[.28em] text-white/65 transition hover:border-white/35 hover:text-white">Scroll</a>
+            <a href="#fashion-films" className="rounded-full border border-white/15 px-6 py-4 text-[10px] uppercase tracking-[.28em] text-white/65 transition hover:border-white/35 hover:text-white">Scroll</a>
           </div>
         </div>
       </section>
@@ -26,7 +25,7 @@ export default function Home() {
 
       <section id="services" data-section data-title="Services" className="border-t border-white/10 px-4 py-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-[10px] uppercase tracking-[.38em] text-white/35">Available Services</div>
+          <div className="mb-12 text-[10px] uppercase tracking-[.38em] text-white/35">Services</div>
           <div className="grid gap-4 md:grid-cols-4">
             {['Photography', 'Videography', 'Social Content', 'Production Support'].map((service) => (
               <div key={service} className="rounded-3xl border border-white/10 bg-white/[.025] p-7 transition hover:border-white/25 hover:bg-white/[.045]">

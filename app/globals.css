@@ -22,3 +22,8 @@ body:before {
 @media (prefers-reduced-motion: reduce) {
   *, *:before, *:after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+.ghost-title {
+  -webkit-text-stroke: 1px rgba(255,255,255,0.42);
+  text-stroke: 1px rgba(255,255,255,0.42);
+}
