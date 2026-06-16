@@ -1,5 +1,4 @@
 import Navbar from '@/components/Navbar';
-import SectionTracker from '@/components/SectionTracker';
 import PortfolioSection from '@/components/PortfolioSection';
 import { sections } from '@/data/videos';
 
@@ -7,19 +6,6 @@ export default function Home() {
   return (
     <main id="top" className="min-h-screen bg-[#050505] text-white">
       <Navbar />
-      <SectionTracker />
-
-      <section className="flex min-h-[40vh] items-end border-b border-white/10 px-4 pb-10 pt-28 sm:min-h-[46vh] sm:px-6 lg:px-8">
-        <div className="mx-auto w-full max-w-7xl">
-          <div className="mb-8 h-px w-full bg-gradient-to-r from-white/10 via-white/25 to-white/10" />
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <div className="text-[10px] uppercase tracking-[.4em] text-white/35">Selected Moving Image</div>
-            </div>
-            <a href="#fashion-films" className="rounded-full border border-white/15 px-6 py-4 text-[10px] uppercase tracking-[.28em] text-white/65 transition hover:border-white/35 hover:text-white">Scroll</a>
-          </div>
-        </div>
-      </section>
 
       {sections.map((section, index) => <PortfolioSection key={section.slug} section={section} index={index} />)}
 
