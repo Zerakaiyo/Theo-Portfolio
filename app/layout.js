@@ -1,18 +1,14 @@
 import './globals.css';
-import Navbar from '@/components/Navbar';
 
 export const metadata = {
   title: 'Theo Majer | DOP / Photography / Lighting',
-  description: 'Portfolio of Theo Majer, DOP, photography and lighting.'
+  description: 'Selected moving image, photography and lighting work by Theo Majer.'
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

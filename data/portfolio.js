@@ -1,68 +1,98 @@
-export const categories = [
+const y = (url) => {
+  const short = url.match(/youtu\.be\/([^?]+)/);
+  const normal = url.match(/[?&]v=([^&]+)/);
+  const shorts = url.match(/shorts\/([^?]+)/);
+  const id = short?.[1] || normal?.[1] || shorts?.[1] || url;
+  return {
+    url,
+    id,
+    embed: `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`,
+    thumb: `https://img.youtube.com/vi/${id}/maxresdefault.jpg`
+  };
+};
+
+const make = (title, role, url, orientation = 'landscape') => ({ title, role, orientation, ...y(url) });
+
+export const sections = [
   {
-    slug: 'fashion-films',
+    id: 'fashion-films',
     title: 'Fashion Films',
-    kicker: 'Fashion / Film',
-    description: 'Selected moving image work.',
-    featured: 'Gcel7y6SwC8',
-    items: [
-      ['Gcel7y6SwC8','Arop Akol'],['OELOPUWMG8c','Can I Entertain PT.1'],['U5Q393xIlYo','Can I Entertain PT.2'],['QRmKW-pn_08','Du Deurre'],['ysFOeBxdC1o','Era 2 Era PT.1'],['Sm0koJQx6IM','Era 2 Era PT.2'],['IelTKU7Jt64','Like This Unseen Handycam'],['p1rsAbMFGWg','Like This Unseen PT.1'],['c98LbG21208','Like This Unseen PT.2'],['NiyzYN7hRy0','Outside The Circle BTS'],['SbqZrTf_zdk','Outside The Circle Timothy'],['ZSynkkXLlxw','RGB PT.1'],['ve3-eI6Z6Ao','RGB PT.2'],['EXvXXvyqQHI','State Of Still PT.1'],['kfePi4RKuxQ','State Of Still PT.2'],['V6_CGFiYG3g','Taste Of Time','short']
+    pieces: [
+      make('Arop Akol', 'Fashion Film', 'https://youtu.be/Gcel7y6SwC8'),
+      make('Can I Entertain PT.1', 'Fashion Film', 'https://youtu.be/OELOPUWMG8c'),
+      make('Can I Entertain PT.2', 'Fashion Film', 'https://youtu.be/U5Q393xIlYo'),
+      make('Du Deurre', 'Fashion Film', 'https://youtu.be/QRmKW-pn_08'),
+      make('Era 2 Era PT.1', 'Fashion Film', 'https://youtu.be/ysFOeBxdC1o'),
+      make('Era 2 Era PT.2', 'Fashion Film', 'https://youtu.be/Sm0koJQx6IM'),
+      make('Like This Unseen (Handycam)', 'Fashion Film', 'https://youtu.be/IelTKU7Jt64'),
+      make('Like This Unseen PT.1', 'Fashion Film', 'https://youtu.be/p1rsAbMFGWg'),
+      make('Like This Unseen PT.2', 'Fashion Film', 'https://youtu.be/c98LbG21208'),
+      make('Outside The Circle BTS', 'Fashion Film', 'https://youtu.be/NiyzYN7hRy0'),
+      make('Outside The Circle Timothy', 'Fashion Film', 'https://youtu.be/SbqZrTf_zdk'),
+      make('RGB PT.1', 'Fashion Film', 'https://youtu.be/ZSynkkXLlxw'),
+      make('RGB PT.2', 'Fashion Film', 'https://youtu.be/ve3-eI6Z6Ao'),
+      make('State Of Still PT.1', 'Fashion Film', 'https://youtu.be/EXvXXvyqQHI'),
+      make('State Of Still PT.2', 'Fashion Film', 'https://youtu.be/kfePi4RKuxQ'),
+      make('Taste Of Time', 'Fashion Film', 'https://youtube.com/shorts/V6_CGFiYG3g', 'portrait')
     ]
   },
   {
-    slug: 'clothing',
+    id: 'clothing',
     title: 'Clothing',
-    kicker: 'Edited Videos',
-    description: 'Victor clothing edits and vertical content.',
-    featured: '0EYTirQp85M',
-    items: [
-      ['0EYTirQp85M','Victor Clothing PT.1','short'],['6uZui6K4VVI','Victor Clothing PT.2','short'],['VIVgjSpC9B4','Victor Clothing PT.3','short'],['frvjt1knH3g','Victor Clothing PT.4','short'],['gbFItuIpcbE','Victor Clothing PT.5','short'],['ET1NBiquL4s','Victor Clothing PT.6','short'],['aPbYVuU2fhM','Victor Clothing PT.7','short'],['ulWEfxtVO9g','Victor Clothing PT.8','short'],['hGoEvBk4MsM','Victor Clothing PT.9','short']
+    pieces: [
+      make('Victor Clothing PT.1', 'Edited Video', 'https://youtube.com/shorts/0EYTirQp85M', 'portrait'),
+      make('Victor Clothing PT.2', 'Edited Video', 'https://youtube.com/shorts/6uZui6K4VVI', 'portrait'),
+      make('Victor Clothing PT.3', 'Edited Video', 'https://youtube.com/shorts/VIVgjSpC9B4', 'portrait'),
+      make('Victor Clothing PT.4', 'Edited Video', 'https://youtube.com/shorts/frvjt1knH3g', 'portrait'),
+      make('Victor Clothing PT.5', 'Edited Video', 'https://youtube.com/shorts/gbFItuIpcbE', 'portrait'),
+      make('Victor Clothing PT.6', 'Edited Video', 'https://youtube.com/shorts/ET1NBiquL4s', 'portrait'),
+      make('Victor Clothing PT.7', 'Edited Video', 'https://youtube.com/shorts/aPbYVuU2fhM', 'portrait'),
+      make('Victor Clothing PT.8', 'Edited Video', 'https://youtube.com/shorts/ulWEfxtVO9g', 'portrait'),
+      make('Victor Clothing PT.9', 'Edited Video', 'https://youtube.com/shorts/hGoEvBk4MsM', 'portrait')
     ]
   },
   {
-    slug: 'music',
+    id: 'music',
     title: 'Music',
-    kicker: 'Music Videos / Stills',
-    description: 'Music-led videography, stills and short-form work.',
-    featured: 'vLNXrpbxXfo',
-    items: [
-      ['AcAkDsWnvn0','Music Stills'],['vLNXrpbxXfo','Take A Touch Videography PT.1'],['z93SxUd5gOw','Take A Touch Videography PT.2','short'],['7PorucLQXTI','Take A Touch Videography PT.3','short'],['fwQKDnmpJP8','Take A Touch Videography PT.4','short'],['UJJ44TyzBBo','Take A Touch Videography PT.5','short'],['9W0G7LrQ_sM','Take A Touch Videography PT.6','short'],['-YmuOT6-HPk','Stills For Music Video PT.1'],['Yi-l2c1e2TQ','Stills For Music Video PT.2'],['D7lhjyPEzOc','Eleazar PT.1','short'],['BG_RcfIW-Lw','Eleazar PT.2','short'],['8EtYsn5cKd8','Eleazar PT.3','short'],['jgFmPVrW8D4','Eleazar PT.4','short'],['iXBCaboGVCk','Eleazar PT.5','short']
+    pieces: [
+      make('Music Stills', 'Music Stills', 'https://youtu.be/AcAkDsWnvn0'),
+      make('Take A Touch PT.1', 'Videography', 'https://youtu.be/vLNXrpbxXfo'),
+      make('Take A Touch PT.2', 'Videography', 'https://youtube.com/shorts/z93SxUd5gOw', 'portrait'),
+      make('Take A Touch PT.3', 'Videography', 'https://youtube.com/shorts/7PorucLQXTI', 'portrait'),
+      make('Take A Touch PT.4', 'Videography', 'https://youtube.com/shorts/fwQKDnmpJP8', 'portrait'),
+      make('Take A Touch PT.5', 'Videography', 'https://youtube.com/shorts/UJJ44TyzBBo', 'portrait'),
+      make('Take A Touch PT.6', 'Videography', 'https://youtube.com/shorts/9W0G7LrQ_sM', 'portrait'),
+      make('Music Video Stills PT.1', 'Stills', 'https://youtu.be/-YmuOT6-HPk'),
+      make('Music Video Stills PT.2', 'Stills', 'https://youtu.be/Yi-l2c1e2TQ'),
+      make('Eleazar PT.1', 'Music Video', 'https://youtube.com/shorts/D7lhjyPEzOc', 'portrait'),
+      make('Eleazar PT.2', 'Music Video', 'https://youtube.com/shorts/BG_RcfIW-Lw', 'portrait'),
+      make('Eleazar PT.3', 'Music Video', 'https://youtube.com/shorts/8EtYsn5cKd8', 'portrait'),
+      make('Eleazar PT.4', 'Music Video', 'https://youtube.com/shorts/jgFmPVrW8D4', 'portrait'),
+      make('Eleazar PT.5', 'Music Video', 'https://youtube.com/shorts/iXBCaboGVCk', 'portrait')
     ]
   },
   {
-    slug: 'big-sky',
+    id: 'big-sky',
     title: 'Big Sky',
-    kicker: 'Content',
-    description: 'Selected production and equipment-led content.',
-    featured: 'xDp_n0XhJSY',
-    items: [
-      ['xDp_n0XhJSY','C0044','short'],['3E0GByLjdS8','EASYRIG BS DB','short'],['fz9okQQBOiw','STORM XT52','short']
+    pieces: [
+      make('C0044', 'Big Sky Content', 'https://youtube.com/shorts/xDp_n0XhJSY', 'portrait'),
+      make('EASYRIG BS DB', 'Big Sky Content', 'https://youtube.com/shorts/3E0GByLjdS8', 'portrait'),
+      make('STORM XT52', 'Big Sky Content', 'https://youtube.com/shorts/fz9okQQBOiw', 'portrait')
     ]
   },
   {
-    slug: 'assisting',
+    id: 'assisting',
     title: 'Assisting',
-    kicker: 'SUPERDRY',
-    description: 'Assisting and branded production support.',
-    featured: 'gpfnChGZqwU',
-    items: [
-      ['gpfnChGZqwU','Fleece 15s DG Branded'],['h6jLvsoj9QA','Jackets D1 30s DG Branded'],['BJtMvYvdvAo','Jackets D2 30s DG Branded'],['Ycxsyg-7OBc','SS25 Library Dual 30s'],['4jrUUqBDl_w','SS25 Regency Dual 30s'],['ikikMSwz_e8','Wet DG 15s Grade'],['WKjmKVB2cww','Wind DG 15s Grade']
+    pieces: [
+      make('Fleece 15s DG Branded', 'SUPERDRY Assisting', 'https://youtu.be/gpfnChGZqwU'),
+      make('Jackets D1 30s DG Branded', 'SUPERDRY Assisting', 'https://youtu.be/h6jLvsoj9QA'),
+      make('Jackets D2 30s DG Branded', 'SUPERDRY Assisting', 'https://youtu.be/BJtMvYvdvAo'),
+      make('SS25 Library Dual 30s Film', 'SUPERDRY Assisting', 'https://youtu.be/Ycxsyg-7OBc'),
+      make('SS25 Regency Dual 30s Film', 'SUPERDRY Assisting', 'https://youtu.be/4jrUUqBDl_w'),
+      make('Wet DG 15s Grade', 'SUPERDRY Assisting', 'https://youtu.be/ikikMSwz_e8'),
+      make('Wind DG 15s Grade', 'SUPERDRY Assisting', 'https://youtu.be/WKjmKVB2cww')
     ]
   }
-].map(category => ({
-  ...category,
-  items: category.items.map(([youtubeId, title, format]) => ({
-    youtubeId,
-    title,
-    format: format || 'wide',
-    role: category.slug === 'assisting' ? 'Assisting' : category.slug === 'music' ? 'Videography / Stills' : category.slug === 'clothing' ? 'Edited Video' : 'DOP / Photography / Lighting'
-  }))
-}));
+];
 
-export function getCategory(slug) {
-  return categories.find(category => category.slug === slug);
-}
-
-export function youtubeThumb(id) {
-  return `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
-}
+export const services = ['Photography', 'Videography', 'Social Content', 'Production Support'];
