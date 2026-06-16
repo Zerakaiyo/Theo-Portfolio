@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { sections, services } from '@/data/portfolio';
 import Navbar from '@/components/Navbar';
-import ScrollProject from '@/components/ScrollProject';
+import CarouselSection from '@/components/CarouselSection';
 import VideoModal from '@/components/VideoModal';
 
 export default function Exhibition() {
@@ -13,7 +13,7 @@ export default function Exhibition() {
     <>
       <Navbar />
       <main id="top">
-        <section className="hero">
+        <section className="hero compact-hero">
           <div className="hero-grain" />
           <h1>THEO MAJER</h1>
           <p>DOP / PHOTOGRAPHY / LIGHTING</p>
@@ -25,17 +25,7 @@ export default function Exhibition() {
         </section>
 
         {sections.map((section) => (
-          <section id={section.id} className="exhibit-section" key={section.id}>
-            <div className="section-marker">
-              <h2>{section.title}</h2>
-              <span>{section.pieces.length} pieces</span>
-            </div>
-            <div className="work-stream">
-              {section.pieces.map((project, index) => (
-                <ScrollProject key={`${section.id}-${project.id}-${index}`} project={project} index={index} onPlay={setActive} />
-              ))}
-            </div>
-          </section>
+          <CarouselSection key={section.id} section={section} onPlay={setActive} />
         ))}
 
         <section id="services" className="services-section">
