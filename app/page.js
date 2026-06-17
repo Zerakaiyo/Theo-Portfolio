@@ -13,21 +13,6 @@ export default function Home() {
 
       {sections.map((section, index) => <PortfolioSection key={section.slug} section={section} index={index} />)}
 
-      <section id="photography" data-section data-title="Photography" className="relative overflow-hidden border-t border-white/10 px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
-        <div className="pointer-events-none sticky top-24 z-0 -mx-4 mb-[-2rem] overflow-hidden sm:-mx-6 lg:-mx-8">
-          <div className="ghost-title whitespace-nowrap px-4 text-[clamp(3rem,12vw,11rem)] font-semibold uppercase leading-none tracking-[.18em] text-transparent opacity-40 sm:px-6 lg:px-8">
-            Photography
-          </div>
-        </div>
-        <div className="relative z-10 mx-auto max-w-7xl pt-8 sm:pt-16">
-          <div className="mx-auto max-w-4xl rounded-[1.75rem] border border-white/10 bg-white/[.015] p-8 text-center sm:p-14">
-            <div className="text-[10px] uppercase tracking-[.38em] text-white/35">Coming soon</div>
-            <div className="mt-5 text-2xl font-semibold uppercase tracking-[.26em] text-white sm:text-4xl">Photography</div>
-            <a className="mt-8 inline-flex rounded-full border border-white/15 px-6 py-3 text-[10px] uppercase tracking-[.25em] text-white/65 transition hover:border-white/30 hover:text-white" href="https://www.instagram.com/theomajer.filmcamera/" target="_blank">Film Instagram</a>
-          </div>
-        </div>
-      </section>
-
       <section id="services" data-section data-title="Services" className="border-t border-white/10 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-[10px] uppercase tracking-[.38em] text-white/35">Services</div>

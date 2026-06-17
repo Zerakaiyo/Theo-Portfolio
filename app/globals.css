@@ -19,8 +19,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
   *, *:before, *:after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
-.ghost-title {
-  -webkit-text-stroke: 1px rgba(255,255,255,0.42);
-  text-stroke: 1px rgba(255,255,255,0.42);
+.section-title {
   font-family: Inter, Arial, Helvetica, sans-serif;
+  text-shadow: 0 0 28px rgba(255,255,255,0.08);
 }

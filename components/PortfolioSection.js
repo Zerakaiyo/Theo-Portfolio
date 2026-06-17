@@ -29,7 +29,7 @@ export default function PortfolioSection({ section, index }) {
   return (
     <section id={section.slug} data-section data-title={section.title} className="relative min-h-screen overflow-hidden border-t border-white/10 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="pointer-events-none sticky top-24 z-0 -mx-4 mb-[-2rem] overflow-hidden sm:-mx-6 lg:-mx-8">
-        <div className="ghost-title whitespace-nowrap px-4 text-[clamp(3rem,12vw,11rem)] font-semibold uppercase leading-none tracking-[.18em] text-transparent opacity-40 sm:px-6 lg:px-8">
+        <div className="section-title whitespace-nowrap px-4 text-[clamp(3rem,11vw,10rem)] font-semibold uppercase leading-none tracking-[.16em] text-white opacity-95 sm:px-6 lg:px-8">
           {section.title}
         </div>
       </div>
@@ -38,7 +38,7 @@ export default function PortfolioSection({ section, index }) {
         <div className="mb-6 flex items-end justify-between gap-4">
           <div>
             <div className="mb-3 text-[9px] uppercase tracking-[.36em] text-white/35 sm:text-[10px]">{String(index + 1).padStart(2, '0')} / {section.eyebrow}</div>
-            <h2 className="text-base font-semibold uppercase tracking-[.3em] text-white/75 sm:text-lg">{section.title}</h2>
+            <h2 className="text-2xl font-semibold uppercase tracking-[.28em] text-white sm:text-4xl">{section.title}</h2>
           </div>
         </div>
 

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { sections } from '@/data/videos';
 
 const extraLinks = [
-  { label: 'Photography', href: '#photography' },
+  { label: 'Services', href: '#services' },
   { label: 'Contact', href: '#contact' },
 ];
 
