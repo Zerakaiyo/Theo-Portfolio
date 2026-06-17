@@ -28,19 +28,16 @@ export default function PortfolioSection({ section, index }) {
 
   return (
     <section id={section.slug} data-section data-title={section.title} className="relative min-h-screen overflow-hidden border-t border-white/10 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <div className="pointer-events-none sticky top-24 z-0 -mx-4 mb-[-2rem] overflow-hidden sm:-mx-6 lg:-mx-8">
-        <div className="section-title whitespace-nowrap px-4 text-[clamp(3rem,11vw,10rem)] font-semibold uppercase leading-none tracking-[.16em] text-white opacity-95 sm:px-6 lg:px-8">
-          {section.title}
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-10 sm:mb-14">
+          <div className="mb-4 text-[9px] uppercase tracking-[.36em] text-white/35 sm:text-[10px]">{String(index + 1).padStart(2, '0')} / {section.eyebrow}</div>
+          <div className="section-title text-[clamp(2.8rem,9vw,8.5rem)] font-semibold uppercase leading-[.86] tracking-[.16em] text-white">
+            {section.title}
+          </div>
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl pt-6 sm:pt-12">
-        <div className="mb-6 flex items-end justify-between gap-4">
-          <div>
-            <div className="mb-3 text-[9px] uppercase tracking-[.36em] text-white/35 sm:text-[10px]">{String(index + 1).padStart(2, '0')} / {section.eyebrow}</div>
-            <h2 className="text-2xl font-semibold uppercase tracking-[.28em] text-white sm:text-4xl">{section.title}</h2>
-          </div>
-        </div>
+      <div className="relative z-10 mx-auto max-w-7xl">
 
         <button
           onClick={() => setActive(section.featured)}
