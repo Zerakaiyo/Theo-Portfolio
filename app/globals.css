@@ -5,25 +5,22 @@
 :root { color-scheme: dark; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: #050505; }
-body:before {
-  content: "";
-  position: fixed; inset: 0; pointer-events: none; z-index: 50;
-  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,.07), transparent 38%), repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0, rgba(255,255,255,.025) 1px, transparent 1px, transparent 4px);
-  mix-blend-mode: screen; opacity: .38;
+body {
+  margin: 0;
+  background: #000;
+  color: #f5f5f5;
+  font-family: Inter, Arial, Helvetica, sans-serif;
 }
 ::selection { background: #eee; color: #050505; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 .fade-up { opacity: 0; transform: translateY(36px); animation: fadeUp .8s ease forwards; }
 @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.marquee { animation: marquee 32s linear infinite; }
 @media (prefers-reduced-motion: reduce) {
   *, *:before, *:after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
-
 .ghost-title {
   -webkit-text-stroke: 1px rgba(255,255,255,0.42);
   text-stroke: 1px rgba(255,255,255,0.42);
+  font-family: Inter, Arial, Helvetica, sans-serif;
 }

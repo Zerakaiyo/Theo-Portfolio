@@ -4,6 +4,21 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { sections } from '@/data/videos';
 
+const extraLinks = [
+  { label: 'Photography', href: '#photography' },
+  { label: 'Contact', href: '#contact' },
+];
+
+function MenuIcon({ open }) {
+  return (
+    <span className="relative block h-4 w-6" aria-hidden="true">
+      <span className={`absolute left-0 top-0 h-px w-6 bg-current transition ${open ? 'top-2 rotate-45' : ''}`} />
+      <span className={`absolute left-0 top-2 h-px w-6 bg-current transition ${open ? 'opacity-0' : ''}`} />
+      <span className={`absolute left-0 top-4 h-px w-6 bg-current transition ${open ? 'top-2 -rotate-45' : ''}`} />
+    </span>
+  );
+}
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [portfolioOpen, setPortfolioOpen] = useState(false);
@@ -11,9 +26,9 @@ export default function Navbar() {
   const closeTimer = useRef(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 16);
     onScroll();
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -23,13 +38,16 @@ export default function Navbar() {
   };
 
   const closePortfolio = () => {
-    closeTimer.current = setTimeout(() => setPortfolioOpen(false), 180);
+    closeTimer.current = setTimeout(() => setPortfolioOpen(false), 190);
   };
 
-  const jumpLinks = sections.map((section) => ({ label: section.title, href: `#${section.slug}` }));
+  const jumpLinks = [
+    ...sections.map((section) => ({ label: section.title, href: `#${section.slug}` })),
+    ...extraLinks,
+  ];
 
   return (
-    <header className={`fixed top-0 z-50 w-full border-b border-white/10 transition duration-500 ${scrolled ? 'bg-black/85 backdrop-blur-xl' : 'bg-black/45 backdrop-blur-md'}`}>
+    <header className={`fixed top-0 z-50 w-full border-b border-white/10 bg-black transition duration-500 ${scrolled ? 'shadow-2xl shadow-black/40' : ''}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <a href="#top" className="group flex items-center gap-3">
           <Image
@@ -41,15 +59,15 @@ export default function Navbar() {
             className="h-10 w-10 rounded-full border border-white/20 object-cover transition duration-500 group-hover:scale-105 sm:h-11 sm:w-11"
           />
           <div className="leading-none">
-            <div className="text-[13px] font-semibold uppercase tracking-[.34em] sm:text-[15px]">Theo Majer</div>
-            <div className="mt-1 text-[8px] uppercase tracking-[.25em] text-white/45 sm:text-[9px]">DOP / Photography / Lighting</div>
+            <div className="text-[12px] font-semibold uppercase tracking-[.34em] text-white sm:text-[15px]">Theo Majer</div>
+            <div className="mt-1.5 text-[7px] uppercase tracking-[.25em] text-white/45 sm:text-[9px]">DOP / Photography / Lighting</div>
           </div>
         </a>
 
         <nav className="hidden items-center gap-7 text-[10px] uppercase tracking-[.32em] text-white/65 md:flex">
           <div className="relative pb-3 pt-3" onMouseEnter={openPortfolio} onMouseLeave={closePortfolio}>
             <a href="#fashion-films" className="transition hover:text-white" onFocus={openPortfolio}>Portfolio ▾</a>
-            <div className={`absolute right-0 top-full w-72 overflow-hidden rounded-3xl border border-white/10 bg-black/90 p-2 shadow-2xl shadow-black/40 backdrop-blur-xl transition duration-200 ${portfolioOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-2 opacity-0'}`}>
+            <div className={`absolute right-0 top-full w-72 overflow-hidden rounded-3xl border border-white/10 bg-black p-2 shadow-2xl shadow-black/60 transition duration-200 ${portfolioOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-2 opacity-0'}`}>
               {jumpLinks.map((link) => (
                 <a
                   key={link.href}
@@ -62,30 +80,26 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-          <a href="#services" className="transition hover:text-white">Services</a>
           <a href="#contact" className="transition hover:text-white">Contact</a>
         </nav>
 
         <button
           onClick={() => setMobileOpen((value) => !value)}
-          className="rounded-full border border-white/15 px-4 py-3 text-[10px] uppercase tracking-[.25em] text-white/80 md:hidden"
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-white/80 md:hidden"
           aria-label="Open menu"
         >
-          {mobileOpen ? 'Close' : 'Menu'}
+          <MenuIcon open={mobileOpen} />
         </button>
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-white/10 bg-black/95 px-4 py-6 md:hidden">
-          <div className="mb-4 text-[9px] uppercase tracking-[.35em] text-white/35">Portfolio</div>
-          <div className="grid gap-2 text-[12px] uppercase tracking-[.24em] text-white/75">
+        <div className="border-t border-white/10 bg-black px-4 py-6 md:hidden">
+          <div className="grid gap-2 text-[11px] uppercase tracking-[.24em] text-white/75">
             {jumpLinks.map((link) => (
-              <a key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="rounded-2xl border border-white/10 px-4 py-3">
+              <a key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="rounded-2xl border border-white/10 px-4 py-3 transition hover:bg-white/[.04]">
                 {link.label}
               </a>
             ))}
-            <a href="#services" onClick={() => setMobileOpen(false)} className="rounded-2xl border border-white/10 px-4 py-3">Services</a>
-            <a href="#contact" onClick={() => setMobileOpen(false)} className="rounded-2xl border border-white/10 px-4 py-3">Contact</a>
           </div>
         </div>
       )}
