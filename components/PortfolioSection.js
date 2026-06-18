@@ -27,21 +27,21 @@ export default function PortfolioSection({ section, index }) {
   const rest = section.items;
 
   return (
-    <section id={section.slug} data-section data-title={section.title} className="relative min-h-screen overflow-hidden border-t border-white/10 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-10 sm:mb-14">
+    <section id={section.slug} data-section data-title={section.title} className="relative min-h-screen overflow-hidden border-t border-white/10 px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8 max-w-full overflow-hidden sm:mb-12">
           <div className="mb-4 text-[9px] uppercase tracking-[.36em] text-white/35 sm:text-[10px]">{section.eyebrow}</div>
-          <div className="section-title text-[clamp(2.8rem,9vw,8.5rem)] font-semibold uppercase leading-[.86] tracking-[.16em] text-white">
+          <div className="section-title max-w-full text-[clamp(2.45rem,7.5vw,6.8rem)] font-semibold uppercase leading-[.9] tracking-[.08em] text-white sm:tracking-[.12em]">
             {section.title}
           </div>
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl">
+      <div className="relative z-10 mx-auto max-w-6xl">
 
         <button
           onClick={() => setActive(section.featured)}
-          className="group relative mx-auto block w-full max-w-5xl overflow-hidden rounded-[1.5rem] border border-white/10 bg-neutral-950 text-left shadow-2xl transition duration-700 hover:border-white/30 sm:rounded-[2rem] lg:w-[72%]"
+          className="group relative mx-auto block w-full max-w-5xl overflow-hidden rounded-[1.5rem] border border-white/10 bg-neutral-950 text-left shadow-2xl transition duration-700 hover:border-white/30 sm:rounded-[2rem] lg:w-[76%]"
         >
           <div className="aspect-video">
             <img src={section.featured.thumb} alt="" onError={(e) => { e.currentTarget.src = section.featured.thumbFallback; }} className="h-full w-full object-cover opacity-80 transition duration-1000 group-hover:scale-[1.035] group-hover:opacity-100" />

@@ -73,7 +73,7 @@ export const sections = [
     slug: 'fashion-films',
     title: 'Fashion Films',
     eyebrow: '01 / Fashion Films / Advertisements',
-    href: '/fashion-films',
+    href: '/#fashion-films',
     featured: fashionFilms[0],
     items: fashionFilms.slice(1),
     type: 'video',
@@ -82,7 +82,7 @@ export const sections = [
     slug: 'assisting',
     title: 'Assisting',
     eyebrow: '02 / Commercials / Moving Image',
-    href: '/assisting',
+    href: '/#assisting',
     featured: commercials[0],
     items: commercials.slice(1),
     type: 'video',
@@ -91,7 +91,7 @@ export const sections = [
     slug: 'music-videos',
     title: 'Music Videos',
     eyebrow: '03 / Music Videos / Stills',
-    href: '/music-videos',
+    href: '/#music-videos',
     featured: musicVideos[0],
     items: musicVideos.slice(1),
     type: 'video',
@@ -100,7 +100,7 @@ export const sections = [
     slug: 'social-media',
     title: 'Social Media',
     eyebrow: '04 / Social Media / Vertical Content',
-    href: '/social-media',
+    href: '/#social-media',
     featured: socialMedia[0],
     items: socialMedia.slice(1),
     type: 'video',
@@ -109,11 +109,11 @@ export const sections = [
     slug: 'photography',
     title: 'Photography',
     eyebrow: '05 / Artists / Portraits / Clothing',
-    href: '/photography',
+    href: '/#photography',
     type: 'photo',
   },
 ];
 
-export const contactLink = { label: 'Contact', href: '/contact' };
+export const contactLink = { label: 'Contact', href: '/#contact' };
 export const videoSections = sections.filter((section) => section.type === 'video');
 export const getSection = (slug) => sections.find((section) => section.slug === slug);
