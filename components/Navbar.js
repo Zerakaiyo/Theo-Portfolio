@@ -1,12 +1,13 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { sections } from '@/data/videos';
 
-const extraLinks = [
-  { label: 'Services', href: '#services' },
-  { label: 'Contact', href: '#contact' },
+const navLinks = [
+  ...sections.map((section) => ({ label: section.title, href: section.href })),
+  { label: 'Contact', href: '/contact' },
 ];
 
 function MenuIcon({ open }) {
@@ -41,15 +42,10 @@ export default function Navbar() {
     closeTimer.current = setTimeout(() => setPortfolioOpen(false), 190);
   };
 
-  const jumpLinks = [
-    ...sections.map((section) => ({ label: section.title, href: `#${section.slug}` })),
-    ...extraLinks,
-  ];
-
   return (
     <header className={`fixed top-0 z-50 w-full border-b border-white/10 bg-black transition duration-500 ${scrolled ? 'shadow-2xl shadow-black/40' : ''}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#top" className="group flex items-center gap-3">
+        <Link href="/" className="group flex items-center gap-3">
           <Image
             src="/profile.jpg"
             alt="Theo Majer"
@@ -62,25 +58,25 @@ export default function Navbar() {
             <div className="text-[12px] font-semibold uppercase tracking-[.34em] text-white sm:text-[15px]">Theo Majer</div>
             <div className="mt-1.5 text-[7px] uppercase tracking-[.25em] text-white/45 sm:text-[9px]">DOP / Photography / Lighting</div>
           </div>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-7 text-[10px] uppercase tracking-[.32em] text-white/65 md:flex">
           <div className="relative pb-3 pt-3" onMouseEnter={openPortfolio} onMouseLeave={closePortfolio}>
-            <a href="#fashion-films" className="transition hover:text-white" onFocus={openPortfolio}>Portfolio ▾</a>
+            <Link href="/fashion-films" className="transition hover:text-white" onFocus={openPortfolio}>Portfolio ▾</Link>
             <div className={`absolute right-0 top-full w-72 overflow-hidden rounded-3xl border border-white/10 bg-black p-2 shadow-2xl shadow-black/60 transition duration-200 ${portfolioOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-2 opacity-0'}`}>
-              {jumpLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
+              {sections.map((section) => (
+                <Link
+                  key={section.href}
+                  href={section.href}
                   className="block rounded-2xl px-4 py-3 text-[10px] uppercase tracking-[.26em] text-white/55 transition hover:bg-white/[.06] hover:text-white"
                   onClick={() => setPortfolioOpen(false)}
                 >
-                  {link.label}
-                </a>
+                  {section.title}
+                </Link>
               ))}
             </div>
           </div>
-          <a href="#contact" className="transition hover:text-white">Contact</a>
+          <Link href="/contact" className="transition hover:text-white">Contact</Link>
         </nav>
 
         <button
@@ -95,10 +91,10 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="border-t border-white/10 bg-black px-4 py-6 md:hidden">
           <div className="grid gap-2 text-[11px] uppercase tracking-[.24em] text-white/75">
-            {jumpLinks.map((link) => (
-              <a key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="rounded-2xl border border-white/10 px-4 py-3 transition hover:bg-white/[.04]">
+            {navLinks.map((link) => (
+              <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="rounded-2xl border border-white/10 px-4 py-3 transition hover:bg-white/[.04]">
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
