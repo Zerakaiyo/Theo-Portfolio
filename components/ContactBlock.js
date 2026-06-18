@@ -8,9 +8,7 @@ export default function ContactBlock() {
           <div className="mt-4 text-[9px] uppercase tracking-[.3em] text-white/40 sm:text-[10px]">DOP / Photography / Lighting</div>
         </div>
         <div className="flex flex-wrap gap-3 text-[10px] uppercase tracking-[.25em] text-white/65">
-          <a className="rounded-full border border-white/15 px-5 py-3 transition hover:border-white/30 hover:text-white" href="https://www.instagram.com/theo.majer/" target="_blank">Instagram</a>
-          <a className="rounded-full border border-white/15 px-5 py-3 transition hover:border-white/30 hover:text-white" href="https://www.instagram.com/theomajer.filmcamera/" target="_blank">Film Instagram</a>
-          <a className="rounded-full border border-white/15 px-5 py-3 transition hover:border-white/30 hover:text-white" href="mailto:hello@theomajer.com">Email</a>
+          <a className="rounded-full border border-white/15 px-5 py-3 transition hover:border-white/30 hover:text-white" href="https://www.instagram.com/theo.majer/" target="_blank">Instagram</a>          <a className="rounded-full border border-white/15 px-5 py-3 transition hover:border-white/30 hover:text-white" href="mailto:hello@theomajer.com">Email</a>
         </div>
       </div>
     </section>
