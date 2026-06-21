@@ -10,7 +10,7 @@ export default function SocialMediaPage() {
     <main className="min-h-screen bg-black text-white">
       <Navbar />
       <div className="h-[84px] sm:h-[92px]" />
-      <PortfolioSection section={section} index={3} />
+      <PortfolioSection section={section} index={2} />
     </main>
   );
 }

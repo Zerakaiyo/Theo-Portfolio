@@ -7,21 +7,9 @@ import { sections } from '@/data/videos';
 
 const navLinks = [
   ...sections.map((section) => ({ label: section.title, href: section.href })),
-  { label: 'Contact', href: '/#contact' },
+  { label: 'Contact', href: '/contact' },
 ];
 
-
-function InstagramIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.7" />
-      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.7" />
-      <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" />
-    </svg>
-  );
-}
-
-const instagramUrl = 'https://www.instagram.com/theo.majer/';
 function MenuIcon({ open }) {
   return (
     <span className="relative block h-4 w-6" aria-hidden="true">
@@ -74,7 +62,7 @@ export default function Navbar() {
 
         <nav className="hidden items-center gap-7 text-[10px] uppercase tracking-[.32em] text-white/65 md:flex">
           <div className="relative pb-3 pt-3" onMouseEnter={openPortfolio} onMouseLeave={closePortfolio}>
-            <Link href="/#fashion-films" className="transition hover:text-white" onFocus={openPortfolio}>Portfolio ▾</Link>
+            <Link href="/fashion-films" className="transition hover:text-white" onFocus={openPortfolio}>Portfolio ▾</Link>
             <div className={`absolute right-0 top-full w-72 overflow-hidden rounded-3xl border border-white/10 bg-black p-2 shadow-2xl shadow-black/60 transition duration-200 ${portfolioOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-2 opacity-0'}`}>
               {sections.map((section) => (
                 <Link
@@ -88,36 +76,16 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-          <Link href="/#contact" className="transition hover:text-white">Contact</Link>
-          <a
-            href={instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Theo Majer Instagram"
-            className="-ml-2 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/45 transition hover:border-white/25 hover:text-white"
-          >
-            <InstagramIcon />
-          </a>
+          <Link href="/contact" className="transition hover:text-white">Contact</Link>
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
-          <a
-            href={instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Theo Majer Instagram"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white/55 transition hover:border-white/25 hover:text-white"
-          >
-            <InstagramIcon />
-          </a>
-          <button
-            onClick={() => setMobileOpen((value) => !value)}
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-white/80"
-            aria-label="Open menu"
-          >
-            <MenuIcon open={mobileOpen} />
-          </button>
-        </div>
+        <button
+          onClick={() => setMobileOpen((value) => !value)}
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-white/80 md:hidden"
+          aria-label="Open menu"
+        >
+          <MenuIcon open={mobileOpen} />
+        </button>
       </div>
 
       {mobileOpen && (
