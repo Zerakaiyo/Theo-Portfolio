@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import PortfolioSection from '@/components/PortfolioSection';
 import ContactBlock from '@/components/ContactBlock';
+import PhotoSection from '@/components/PhotoSection';
 import { sections } from '@/data/videos';
 
 export default function Home() {
@@ -19,11 +20,13 @@ export default function Home() {
                 {section.title}
               </Link>
             ))}
+            <Link href="/photography" className="rounded-full border border-white/15 px-5 py-3 transition hover:border-white/30 hover:text-white">Photography</Link>
           </div>
         </div>
       </section>
 
       {sections.map((section, index) => <PortfolioSection key={section.slug} section={section} index={index} />)}
+      <PhotoSection />
       <ContactBlock />
     </main>
   );

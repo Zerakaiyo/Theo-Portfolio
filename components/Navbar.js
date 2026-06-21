@@ -5,8 +5,13 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { sections } from '@/data/videos';
 
-const navLinks = [
+const portfolioLinks = [
   ...sections.map((section) => ({ label: section.title, href: section.href })),
+  { label: 'Photography', href: '/photography' },
+];
+
+const navLinks = [
+  ...portfolioLinks,
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -64,14 +69,14 @@ export default function Navbar() {
           <div className="relative pb-3 pt-3" onMouseEnter={openPortfolio} onMouseLeave={closePortfolio}>
             <Link href="/fashion-films" className="transition hover:text-white" onFocus={openPortfolio}>Portfolio ▾</Link>
             <div className={`absolute right-0 top-full w-72 overflow-hidden rounded-3xl border border-white/10 bg-black p-2 shadow-2xl shadow-black/60 transition duration-200 ${portfolioOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-2 opacity-0'}`}>
-              {sections.map((section) => (
+              {portfolioLinks.map((link) => (
                 <Link
-                  key={section.href}
-                  href={section.href}
+                  key={link.href}
+                  href={link.href}
                   className="block rounded-2xl px-4 py-3 text-[10px] uppercase tracking-[.26em] text-white/55 transition hover:bg-white/[.06] hover:text-white"
                   onClick={() => setPortfolioOpen(false)}
                 >
-                  {section.title}
+                  {link.label}
                 </Link>
               ))}
             </div>

@@ -31,7 +31,7 @@ export default function PortfolioSection({ section, index }) {
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 sm:mb-12">
           <div className="mb-3 text-[8px] uppercase tracking-[.34em] text-white/30 sm:text-[9px]">{String(index + 1).padStart(2, '0')} / {section.eyebrow}</div>
-          <h1 className="section-title text-[clamp(2.2rem,6vw,5.4rem)] font-semibold uppercase leading-[.92] tracking-[.18em] text-white">
+          <h1 className="section-title text-[clamp(1.1rem,3vw,2.7rem)] font-semibold uppercase leading-[.92] tracking-[.18em] text-white">
             {section.title}
           </h1>
         </div>

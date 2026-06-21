@@ -50,7 +50,7 @@ export default function ContactBlock() {
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
           <div className="text-[9px] uppercase tracking-[.38em] text-white/35">Contact</div>
-          <h1 className="mt-5 text-[clamp(2.1rem,6vw,5rem)] font-semibold uppercase leading-none tracking-[.18em] text-white">Theo Majer</h1>
+          <h1 className="mt-5 text-[clamp(1.05rem,3vw,2.5rem)] font-semibold uppercase leading-none tracking-[.18em] text-white">Theo Majer</h1>
           <div className="mt-4 text-[8px] uppercase tracking-[.3em] text-white/40 sm:text-[9px]">DOP / Photography / Lighting</div>
           <div className="mt-8 flex gap-3">
             <a
