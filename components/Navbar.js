@@ -6,13 +6,13 @@ import { useEffect, useRef, useState } from 'react';
 import { sections } from '@/data/videos';
 
 const portfolioLinks = [
-  ...sections.map((section) => ({ label: section.title, href: section.href })),
-  { label: 'Photography', href: '/photography' },
+  ...sections.map((section) => ({ label: section.title, href: `#${section.slug}` })),
+  { label: 'Photography', href: '#photography' },
 ];
 
 const navLinks = [
   ...portfolioLinks,
-  { label: 'Contact', href: '/contact' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 function MenuIcon({ open }) {
