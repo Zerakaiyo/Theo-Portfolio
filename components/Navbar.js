@@ -67,7 +67,7 @@ export default function Navbar() {
 
         <nav className="hidden items-center gap-7 text-[10px] uppercase tracking-[.32em] text-white/65 md:flex">
           <div className="relative pb-3 pt-3" onMouseEnter={openPortfolio} onMouseLeave={closePortfolio}>
-            <Link href="/fashion-films" className="transition hover:text-white" onFocus={openPortfolio}>Portfolio ▾</Link>
+            <Link href="#fashion" className="transition hover:text-white" onFocus={openPortfolio}>Portfolio ▾</Link>
             <div className={`absolute right-0 top-full w-72 overflow-hidden rounded-3xl border border-white/10 bg-black p-2 shadow-2xl shadow-black/60 transition duration-200 ${portfolioOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-2 opacity-0'}`}>
               {portfolioLinks.map((link) => (
                 <Link
@@ -81,7 +81,7 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-          <Link href="/contact" className="transition hover:text-white">Contact</Link>
+          <Link href="#contact" className="transition hover:text-white">Contact</Link>
         </nav>
 
         <button

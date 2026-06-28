@@ -42,7 +42,7 @@ export default function PhotoSection({ compact = false }) {
     <section id="photography" data-section data-title="Photography" className={`relative overflow-hidden border-t border-white/10 px-4 ${compact ? 'py-14' : 'py-16 sm:py-24'} sm:px-6 lg:px-8`}>
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 sm:mb-12">
-          <div className="mb-3 text-[8px] uppercase tracking-[.34em] text-white/30 sm:text-[9px]">04 / Selected stills</div>
+          <div className="mb-3 text-[8px] uppercase tracking-[.34em] text-white/30 sm:text-[9px]">06 / Artists / Portraits / Clothing</div>
           <h1 className="section-title text-[clamp(1.1rem,3vw,2.7rem)] font-semibold uppercase leading-[.92] tracking-[.18em] text-white">Photography</h1>
         </div>
 
