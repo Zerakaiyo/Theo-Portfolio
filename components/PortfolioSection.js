@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react';
 import VideoModal from './VideoModal';
+import YouTubeTitle from './YouTubeTitle';
 
 function Thumb({ item, onClick }) {
   return (
@@ -12,7 +13,7 @@ function Thumb({ item, onClick }) {
       <img src={item.thumb} alt="" className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-100" />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 p-5">
-        <div className="text-[10px] font-semibold uppercase tracking-[.26em] text-white sm:text-xs">{item.title}</div>
+        <YouTubeTitle item={item} className="text-[10px] font-semibold uppercase tracking-[.26em] text-white sm:text-xs" />
         <div className="mt-2 text-[8px] uppercase tracking-[.22em] text-white/45 sm:text-[9px]">{item.role}</div>
       </div>
       <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/55 text-sm text-white/80 opacity-0 transition group-hover:opacity-100">▶</div>
@@ -48,7 +49,7 @@ export default function PortfolioSection({ section, index }) {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-4 p-5 sm:p-7">
             <div>
-              <div className="text-[10px] font-semibold uppercase tracking-[.26em] text-white sm:text-xs">{section.featured.title}</div>
+              <YouTubeTitle item={section.featured} className="text-[10px] font-semibold uppercase tracking-[.26em] text-white sm:text-xs" />
               <div className="mt-2 text-[8px] uppercase tracking-[.24em] text-white/45 sm:text-[9px]">{section.featured.role}</div>
             </div>
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/40 text-white/80 transition group-hover:border-white/35 group-hover:text-white">▶</div>
