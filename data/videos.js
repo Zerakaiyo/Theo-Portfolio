@@ -13,6 +13,13 @@ const yt = (url) => {
 
 const make = (title, url, role) => ({ title, role, ...yt(url) });
 
+const score = (item, seed = 0) => {
+  const source = `${item.id}-${seed}`;
+  return source.split('').reduce((total, char) => (total * 31 + char.charCodeAt(0)) % 9973, 7);
+};
+
+const randomise = (items, seed) => [...items].sort((a, b) => score(a, seed) - score(b, seed));
+
 const fashion = [
   make('State of Still {PT.2}', 'https://youtu.be/kfePi4RKuxQ', 'DOP / EDIT'),
   make('Like this Unseen PT.2', 'https://youtu.be/c98LbG21208', 'DOP / EDIT'),
@@ -77,7 +84,7 @@ export const sections = [
     eyebrow: '01 / Fashion Films / Advertisements',
     href: '#fashion',
     featured: fashion[0],
-    items: fashion.slice(1),
+    items: randomise(fashion.slice(1), 11),
   },
   {
     slug: 'assisting',
@@ -85,7 +92,7 @@ export const sections = [
     eyebrow: '02 / Moving Image / Commercials',
     href: '#assisting',
     featured: assisting[0],
-    items: assisting.slice(1),
+    items: randomise(assisting.slice(1), 22),
   },
   {
     slug: 'music',
@@ -93,7 +100,7 @@ export const sections = [
     eyebrow: '03 / Music Videos / Photography',
     href: '#music',
     featured: music[0],
-    items: music.slice(1),
+    items: randomise(music.slice(1), 33),
   },
   {
     slug: 'socials',
@@ -101,7 +108,7 @@ export const sections = [
     eyebrow: '04 / Vertical Content / Brands',
     href: '#socials',
     featured: socials[0],
-    items: socials.slice(1),
+    items: randomise(socials.slice(1), 44),
   },
   {
     slug: 'events',
@@ -109,7 +116,7 @@ export const sections = [
     eyebrow: '05 / Event Coverage / Highlights',
     href: '#events',
     featured: events[0],
-    items: events.slice(1),
+    items: randomise(events.slice(1), 55),
   },
 ];
 
