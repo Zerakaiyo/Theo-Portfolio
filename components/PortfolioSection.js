@@ -32,6 +32,7 @@ export default function PortfolioSection({ section, index }) {
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 sm:mb-12">
           <div className="text-[8px] uppercase tracking-[.34em] text-white/35 sm:text-[9px]">{section.eyebrow}</div>
+          <h2 className="section-title mt-3 text-3xl font-semibold uppercase tracking-[.16em] text-white sm:text-4xl lg:text-5xl">{section.title}</h2>
         </div>
       </div>
 

@@ -19,6 +19,15 @@ const score = (item, seed = 0) => {
 };
 
 const randomise = (items, seed) => [...items].sort((a, b) => score(a, seed) - score(b, seed));
+const moveAfterFirst = (items, id) => {
+  const copy = [...items];
+  const index = copy.findIndex((item) => item.id === id);
+  if (index > 0) {
+    const [item] = copy.splice(index, 1);
+    copy.splice(1, 0, item);
+  }
+  return copy;
+};
 
 const fashion = [
   make('State of Still {PT.2}', 'https://youtu.be/kfePi4RKuxQ', 'DOP / EDIT'),
@@ -84,7 +93,7 @@ export const sections = [
     eyebrow: '01 / Fashion Films / Advertisements',
     href: '#fashion',
     featured: fashion[0],
-    items: randomise(fashion.slice(1), 11),
+    items: moveAfterFirst(randomise(fashion.slice(1), 11), 've3-eI6Z6Ao'),
   },
   {
     slug: 'assisting',
@@ -108,7 +117,7 @@ export const sections = [
     eyebrow: '04 / Vertical Content / Brands',
     href: '#socials',
     featured: socials[0],
-    items: randomise(socials.slice(1), 44),
+    items: randomise(socials.slice(1), 83),
   },
   {
     slug: 'events',
