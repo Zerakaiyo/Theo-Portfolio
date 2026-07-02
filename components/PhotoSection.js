@@ -43,6 +43,7 @@ export default function PhotoSection({ compact = false }) {
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 sm:mb-12">
           <div className="text-[8px] uppercase tracking-[.34em] text-white/35 sm:text-[9px]">06 / Artists / Portraits / Clothing</div>
+          <h2 className="section-title mt-3 text-3xl font-semibold uppercase tracking-[.16em] text-white sm:text-4xl lg:text-5xl">Photography</h2>
         </div>
 
         <button onClick={() => setActive(featuredPhoto)} className="group mb-8 block w-full overflow-hidden rounded-[1.35rem] border border-white/10 bg-neutral-950 text-left shadow-2xl transition duration-700 hover:border-white/30 sm:mb-12 sm:rounded-[1.75rem]">

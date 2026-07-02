@@ -62,6 +62,7 @@ const assisting = [
 const music = [
   make('Take A Touch - Videography', 'https://youtu.be/vLNXrpbxXfo', 'DOP / PHOTOGRAPHY'),
   make('Stills for Music Video Part 1', 'https://youtu.be/-YmuOT6-HPk', 'ASSISTANT CAMERA / PHOTOGRAPHY'),
+  make('Volatile Currents', 'https://youtu.be/B1XuyaskifU', 'CAMERA OPERATOR'),
   make('Stills for Music Video Part 2', 'https://youtu.be/Yi-l2c1e2TQ', 'ASSISTANT CAMERA / PHOTOGRAPHY'),
 ];
 
