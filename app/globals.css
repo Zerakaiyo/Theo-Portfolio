@@ -29,8 +29,9 @@ body {
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(255,255,255,.94);
   color: #050505;
-  border-radius: .25rem;
-  padding: .85rem .95rem;
+  border-radius: .5rem;
+  min-height: 56px;
+  padding: 0 18px;
   font-size: 16px;
   letter-spacing: .02em;
   outline: none;
@@ -41,3 +42,5 @@ body {
 }
 .contact-input::placeholder { color: rgba(0,0,0,.45); }
 .contact-input option { color: #050505; }
+
+.contact-input:is(textarea) { padding-top: 16px; padding-bottom: 16px; }

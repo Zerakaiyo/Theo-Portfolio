@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 
-const reasons = ['Hire / Enquire', 'General Support', 'Collaboration', 'Photography', 'Videography', 'Other'];
-
 function InstagramIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current stroke-[1.7]">
@@ -19,7 +17,7 @@ export default function ContactBlock() {
     name: '',
     email: '',
     phone: '',
-    reason: reasons[0],
+    reason: '',
     project: '',
     budget: '',
   });
@@ -35,14 +33,14 @@ export default function ContactBlock() {
       `Full Name: ${form.name}`,
       `Email: ${form.email}`,
       `Phone: ${form.phone}`,
-      `Reason: ${form.reason}`,
+      `Contacting About: ${form.reason}`,
       `Budget: ${form.budget}`,
       '',
       'About project:',
       form.project,
     ].join('\n');
 
-    window.location.href = `mailto:hello@theomajer.com?subject=${encodeURIComponent(`Theo Majer enquiry - ${form.reason}`)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:hello@theomajer.com?subject=${encodeURIComponent(`Theo Majer enquiry${form.reason ? ` - ${form.reason}` : ''}`)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -83,9 +81,14 @@ export default function ContactBlock() {
             </div>
             <label className="grid gap-2 text-[10px] font-semibold uppercase tracking-[.24em] text-white/70">
               What are you contacting about?
-              <select name="reason" value={form.reason} onChange={update} className="contact-input">
-                {reasons.map((reason) => <option key={reason}>{reason}</option>)}
-              </select>
+              <input
+                required
+                name="reason"
+                value={form.reason}
+                onChange={update}
+                className="contact-input"
+                placeholder="Hire / Enquiry / Collaboration"
+              />
             </label>
             <label className="grid gap-2 text-[10px] font-semibold uppercase tracking-[.24em] text-white/70">
               About Project

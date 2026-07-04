@@ -30,7 +30,7 @@ export default function PortfolioSection({ section, index }) {
   return (
     <section id={section.slug} data-section data-title={section.title} className="relative min-h-screen overflow-hidden border-t border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-8 sm:mb-12">
+        <div className="mb-8 text-center sm:mb-12">
           <div className="text-[8px] uppercase tracking-[.34em] text-white/35 sm:text-[9px]">{section.eyebrow}</div>
           <h2 className="section-title mt-3 text-3xl font-semibold uppercase tracking-[.16em] text-white sm:text-4xl lg:text-5xl">{section.title}</h2>
         </div>
