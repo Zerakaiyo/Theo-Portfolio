@@ -8,7 +8,7 @@ function PhotoLightbox({ photo, onClose }) {
   return (
     <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/95 p-4" onClick={onClose}>
       <button className="absolute right-5 top-5 rounded-full border border-white/20 px-4 py-2 text-[10px] uppercase tracking-[.25em] text-white/65 transition hover:text-white">Close</button>
-      <img src={photo.src} alt={photo.title} className="max-h-[88vh] max-w-[92vw] object-contain" onClick={(event) => event.stopPropagation()} />
+      <img src={photo.src} alt={photo.title} className="max-h-[88vh] max-w-[92vw] object-contain [image-rendering:auto]" loading="eager" decoding="async" onClick={(event) => event.stopPropagation()} />
     </div>
   );
 }
@@ -24,7 +24,7 @@ function MobilePhotoCarousel({ items, onOpen }) {
             className="relative min-w-[78vw] snap-center overflow-hidden rounded-2xl border border-white/10 bg-neutral-950"
           >
             <div className="aspect-[4/5]">
-              <img src={photo.src} alt={photo.title} className="h-full w-full object-cover" />
+              <img src={photo.src} alt={photo.title} className="h-full w-full object-cover [image-rendering:auto]" loading="lazy" decoding="async" />
             </div>
           </button>
         ))}
@@ -41,14 +41,14 @@ export default function PhotoSection({ compact = false }) {
   return (
     <section id="photography" data-section data-title="Photography" className={`relative overflow-hidden border-t border-white/10 px-4 ${compact ? 'py-14' : 'py-16 sm:py-24'} sm:px-6 lg:px-8`}>
       <div className="mx-auto max-w-7xl">
-        <div className="mb-8 text-center sm:mb-12">
+        <div className="mb-8 sm:mb-12">
           <div className="text-[8px] uppercase tracking-[.34em] text-white/35 sm:text-[9px]">06 / Artists / Portraits / Clothing</div>
           <h2 className="section-title mt-3 text-3xl font-semibold uppercase tracking-[.16em] text-white sm:text-4xl lg:text-5xl">Photography</h2>
         </div>
 
         <button onClick={() => setActive(featuredPhoto)} className="group mb-8 block w-full overflow-hidden rounded-[1.35rem] border border-white/10 bg-neutral-950 text-left shadow-2xl transition duration-700 hover:border-white/30 sm:mb-12 sm:rounded-[1.75rem]">
           <div className="aspect-[16/10] sm:aspect-[16/8]">
-            <img src={featuredPhoto.src} alt="Featured photography" className="h-full w-full object-cover opacity-90 transition duration-1000 group-hover:scale-[1.025] group-hover:opacity-100" />
+            <img src={featuredPhoto.src} alt="Featured photography" className="h-full w-full object-cover opacity-90 transition duration-1000 group-hover:scale-[1.025] group-hover:opacity-100 [image-rendering:auto]" loading="eager" decoding="async" fetchPriority="high" />
           </div>
         </button>
 
@@ -61,7 +61,7 @@ export default function PhotoSection({ compact = false }) {
             return (
               <button key={photo.src} onClick={() => setActive(photo)} className={`group overflow-hidden rounded-xl border border-white/10 bg-neutral-950 ${span}`}>
                 <div className={ratio}>
-                  <img src={photo.src} alt={photo.title} className="h-full w-full object-cover opacity-85 transition duration-700 group-hover:scale-105 group-hover:opacity-100" />
+                  <img src={photo.src} alt={photo.title} className="h-full w-full object-cover opacity-85 transition duration-700 group-hover:scale-105 group-hover:opacity-100 [image-rendering:auto]" loading="lazy" decoding="async" />
                 </div>
               </button>
             );

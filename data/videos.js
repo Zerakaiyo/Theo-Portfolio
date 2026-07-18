@@ -7,7 +7,7 @@ const yt = (url) => {
     id,
     url,
     embed: `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&playsinline=1`,
-    thumb: `https://img.youtube.com/vi/${id}/hqdefault.jpg`,
+    thumb: `https://img.youtube.com/vi/${id}/maxresdefault.jpg`,
   };
 };
 
