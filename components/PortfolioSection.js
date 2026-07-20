@@ -47,18 +47,17 @@ export default function PortfolioSection({ section, index }) {
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-4 p-5 sm:p-7">
-            <div>
-              <YouTubeTitle item={section.featured} className="text-[10px] font-semibold uppercase tracking-[.26em] text-white sm:text-xs" />
-              <div className="mt-2 text-[8px] uppercase tracking-[.24em] text-white/45 sm:text-[9px]">{section.featured.role}</div>
+            <div className="max-w-[78%]">
+              <YouTubeTitle item={section.featured} className="text-sm font-semibold uppercase tracking-[.22em] text-white sm:text-base" />
+              <div className="mt-1.5 text-[8px] uppercase tracking-[.22em] text-white/50 sm:text-[9px]">{section.featured.role}</div>
             </div>
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/40 text-white/80 transition group-hover:border-white/35 group-hover:text-white">▶</div>
           </div>
         </button>
 
         {rest.length > 0 && (
-          <div className="mt-9 sm:mt-11">
-            <div className="mb-5 flex items-center justify-between gap-4">
-              <div className="text-[9px] uppercase tracking-[.32em] text-white/35">More</div>
+          <div className="mt-6 sm:mt-8">
+            <div className="mb-3 flex items-center justify-end gap-4">
               <div className="hidden gap-2 sm:flex">
                 <button onClick={() => scroll(-1)} className="rounded-full border border-white/15 px-4 py-2 text-xs text-white/55 transition hover:border-white/30 hover:text-white">←</button>
                 <button onClick={() => scroll(1)} className="rounded-full border border-white/15 px-4 py-2 text-xs text-white/55 transition hover:border-white/30 hover:text-white">→</button>
